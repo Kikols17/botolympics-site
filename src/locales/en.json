@@ -1,12 +1,108 @@
 {
-  "siteTitle": "Bot Olympics",
-  "welcomeTitle": "Welcome to Bot Olympics",
-  "welcomeText": "A tiny multilingual frontend demo. Edit the JSON files in src/locales to change content.",
-  "features": {
-    "title": "Features",
-    "easyEdit": "Easy content editing via JSON files",
-    "dockerReady": "Docker-ready static build",
-    "simple": "Minimal, easy-to-understand code"
+  "header": {
+    "logo": "/assets/logo.png",
+    "registerText": "Register",
+    "registerUrl": "https://forms.gle/your-registration-form"
   },
-  "footer": "Made with ❤️ — edit content in src/locales/*.json"
+  "landing": {
+    "background": "/assets/2025/hero.jpg",
+    "foregroundLogo": "/assets/logo-foreground.png",
+    "date": "27 — 30 MARCH, COIMBRA"
+  },
+  "about": {
+    "title": "About us",
+    "text": "BotOlympics is an annual robotics competition bringing teams, students and enthusiasts together to learn and compete. Each edition features multiple challenges, workshops and community events. This site is maintained to make it easy to update per edition."
+  },
+  "challenges": {
+    "title": "Challenges",
+    "items": [
+      {
+        "name": "PROVA ISR",
+        "logo": "/assets/2025/challenges/isr-logo.png",
+        "subtitle": "Elementary level",
+        "description": "Teams program a simple autonomous robot to follow lines and complete tasks.",
+        "formUrl": "https://forms.gle/isr-registration",
+        "rulesUrl": "/assets/2025/rules/isr-rules.pdf",
+        "bg": "/assets/2025/challenges/isr-bg.jpg"
+      },
+      {
+        "name": "BOT'N ROLL",
+        "logo": "/assets/2025/challenges/botr-logo.png",
+        "subtitle": "Secondary level",
+        "description": "Timed navigation and payload delivery challenge using Arduino based robots.",
+        "formUrl": "https://forms.gle/botr-registration",
+        "rulesUrl": "/assets/2025/rules/botr-rules.pdf",
+        "bg": "/assets/2025/challenges/botr-bg.jpg"
+      },
+      {
+        "name": "FCTUC CHALLENGE",
+        "logo": "/assets/2025/challenges/fctuc-logo.png",
+        "subtitle": "University level",
+        "description": "Advanced autonomous navigation and sensing challenge for university teams.",
+        "formUrl": "https://forms.gle/fctuc-registration",
+        "rulesUrl": "/assets/2025/rules/fctuc-rules.pdf",
+        "bg": "/assets/2025/challenges/fctuc-bg.jpg"
+      }
+    ]
+  },
+  "schedule": {
+    "title": "Schedule",
+    "description": "The schedule shows all talks, workshops and competition times. Download or view the schedule image below.",
+    "image": "/assets/2025/programa.png"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": [
+      { "q": "How do I register?", "a": "Use the registration links in each challenge box or visit the main registration form." },
+      { "q": "What are the age categories?", "a": "Each challenge lists the intended educational level (elementary, secondary, university)." },
+      { "q": "Can I form a team on-site?", "a": "Yes — individuals can register and we will help find teammates where possible." }
+    ]
+  },
+  "previousEdition": {
+    "title": "Previous Edition",
+    "images": [
+      "/assets/2024/gallery/1.jpg",
+      "/assets/2024/gallery/2.jpg",
+      "/assets/2024/gallery/3.jpg",
+      "/assets/2024/gallery/4.jpg"
+    ]
+  },
+  "sponsors": {
+    "title": "Sponsors",
+    "tiers": [
+      {
+        "name": "Institutional",
+        "sponsors": [
+          { "name": "University of X", "logo": "/assets/2025/sponsors/uni.png", "url": "https://example.edu" }
+        ]
+      },
+      {
+        "name": "Gold",
+        "sponsors": [
+          { "name": "TechCorp", "logo": "/assets/2025/sponsors/techcorp.png", "url": "https://techcorp.example" },
+          { "name": "RoboticsInc", "logo": "/assets/2025/sponsors/roboticsinc.png", "url": "https://roboticsinc.example" }
+        ]
+      },
+      {
+        "name": "Silver",
+        "sponsors": [
+          { "name": "LocalShop", "logo": "/assets/2025/sponsors/localshop.png", "url": "https://localshop.example" }
+        ]
+      }
+    ],
+    "contactNote": "Interested in sponsoring our event? Contact us via patrocinios@botolympics.pt."
+  },
+  "team": [
+    { "name": "Luís Ventura", "role": "General Coordination", "img": "/assets/2025/team/luis.jpg" },
+    { "name": "Pedro Fernandes", "role": "Logistics", "img": "/assets/2025/team/pedro.jpg" },
+    { "name": "Iara Bento", "role": "Volunteer Coordinator", "img": "/assets/2025/team/iara.jpg" }
+  ],
+  "location": {
+    "title": "Location",
+    "description": "DEEC, Polo II, University of Coimbra",
+    "mapEmbedUrl": "https://www.google.com/maps?q=DEEC+Polo+II+Coimbra&output=embed"
+  },
+  "footer": {
+    "credit": "© BotOlympics — edit src/locales/*.json to update content."
+  }
 }

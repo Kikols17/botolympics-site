@@ -1,12 +1,175 @@
 {
-  "siteTitle": "Bot Olympics",
-  "welcomeTitle": "Bem-vindo ao Bot Olympics",
-  "welcomeText": "Uma demonstração multilíngue de frontend. Edite os arquivos JSON em src/locales para alterar o conteúdo.",
-  "features": {
-    "title": "Recursos",
-    "easyEdit": "Edição de conteúdo fácil via arquivos JSON",
-    "dockerReady": "Build estático pronto para Docker",
-    "simple": "Código mínimo e fácil de entender"
+  "siteTitle": "BotOlympics",
+  "edition": "2025",
+  "hero": {
+    "title": "BOTOLYMPICS",
+    "subtitle": "27 — 30 MARÇO, COIMBRA",
+    "image": "/assets/2025/hero.jpg",
+    "cta": "INSCREVE-TE AGORA"
   },
-  "footer": "Feito com ❤️ — edite o conteúdo em src/locales/*.json"
+  "provas": {
+    "title": "PROVAS",
+    "subtitle": "Descobre os diferentes desafios e inscreve-te!",
+    "list": [
+      {
+        "title": "PROVA ISR",
+        "level": "Ensino Básico",
+        "excerpt": "Utilizando um kit de robótica simples, as equipas programam robôs autónomos para completar tarefas.",
+        "cta": "INSCRIÇÕES ESGOTADAS",
+        "bg": "/assets/2025/prova-isr.jpg"
+      },
+      {
+        "title": "PROVA BOT'N ROLL",
+        "level": "Ensino Secundário",
+        "excerpt": "Recolha e entrega de encomendas num ambiente simulado com robôs Arduino.",
+        "cta": "INSCRIÇÕES ESGOTADAS",
+        "bg": "/assets/2025/prova-botr.jpg"
+      },
+      {
+        "title": "PROVA FCTUC",
+        "level": "Ensino Superior",
+        "excerpt": "Desafio avançado de navegação em labirinto com sensores programados em C++.",
+        "cta": "INSCRIÇÕES ESGOTADAS",
+        "bg": "/assets/2025/prova-fctuc.jpg"
+      }
+    ]
+  },
+  "program": {
+    "title": "PROGRAMA",
+    "subtitle": "Este é o programa do evento",
+    "image": "/assets/2025/programa.jpg"
+  },
+  "faq": {
+    "title": "QUESTÕES FREQUENTES",
+    "subtitle": "Para que não tenhas dúvidas quanto à competição.",
+    "items": [
+      { "q": "Quero registar-me, como devo proceder?", "a": "Visita a página de registo e segue os passos indicados." },
+      { "q": "Qual é o custo da inscrição?", "a": "O custo depende da categoria; consulta os regulamentos." },
+      { "q": "Não tenho equipa, e agora?", "a": "Podes registar-te individualmente e ajudamos a formar equipas." },
+      { "q": "Que material devo levar para a competição?", "a": "Trazer robot, carregadores e ferramentas permitidas nos regulamentos." }
+    ]
+  },
+  "sponsors": {
+    "title": "Patrocínios",
+    "tiers": [
+      { "tier": "Institucional", "logos": ["/assets/2025/sponsors/institutional-1.png", "/assets/2025/sponsors/institutional-2.png"] },
+      { "tier": "Diamond", "logos": ["/assets/2025/sponsors/diamond-1.png"] },
+      { "tier": "Gold", "logos": ["/assets/2025/sponsors/gold-1.png", "/assets/2025/sponsors/gold-2.png"] },
+      { "tier": "Silver", "logos": ["/assets/2025/sponsors/silver-1.png", "/assets/2025/sponsors/silver-2.png"] }
+    ]
+  },
+  "team": [
+    { "name": "Luís Ventura", "role": "Coordenação Geral", "img": "/assets/2025/team/luis.jpg" },
+    { "name": "Pedro Fernandes", "role": "Coordenação Geral", "img": "/assets/2025/team/pedro.jpg" },
+    { "name": "Diogo Flórido", "role": "Supervisão NEEEC/AAC", "img": "/assets/2025/team/diogo.jpg" },
+    { "name": "Iara Bento", "role": "Supervisão NEEEC/AAC", "img": "/assets/2025/team/iara.jpg" },
+    { "name": "Francisco Barreto", "role": "Tesouraria", "img": "/assets/2025/team/francisco.jpg" },
+    { "name": "Igor Tanoeiro", "role": "Tesouraria", "img": "/assets/2025/team/igor.jpg" }
+  ],
+  "footer": {
+    "contacts": {
+      "general": "geral@botolympics.pt",
+      "sponsors": "patrocinios@botolympics.pt"
+    },
+    "credit": "© BotOlympics — edite src/locales/*.json para alterar o conteúdo."
+  },
+  "header": {
+    "logo": "/assets/logo.png",
+    "registerText": "Inscrever",
+    "registerUrl": "https://forms.gle/your-registration-form"
+  },
+  "landing": {
+    "background": "/assets/2025/hero.jpg",
+    "foregroundLogo": "/assets/logo-foreground.png",
+    "date": "27 — 30 MARÇO, COIMBRA"
+  },
+  "about": {
+    "title": "Sobre nós",
+    "text": "O BotOlympics é uma competição anual de robótica que junta equipas, estudantes e entusiastas para aprender e competir. Cada edição traz provas, workshops e actividades comunitárias. Este site é mantido para facilitar a edição por edição."
+  },
+  "challenges": {
+    "title": "Provas",
+    "items": [
+      {
+        "name": "PROVA ISR",
+        "logo": "/assets/2025/challenges/isr-logo.png",
+        "subtitle": "Ensino Básico",
+        "description": "Equipa programam um robô autónomo simples para seguir linhas e completar tarefas.",
+        "formUrl": "https://forms.gle/isr-registration",
+        "rulesUrl": "/assets/2025/rules/isr-rules.pdf",
+        "bg": "/assets/2025/challenges/isr-bg.jpg"
+      },
+      {
+        "name": "BOT'N ROLL",
+        "logo": "/assets/2025/challenges/botr-logo.png",
+        "subtitle": "Ensino Secundário",
+        "description": "Navegação cronometrada e entrega de carga com robôs Arduino.",
+        "formUrl": "https://forms.gle/botr-registration",
+        "rulesUrl": "/assets/2025/rules/botr-rules.pdf",
+        "bg": "/assets/2025/challenges/botr-bg.jpg"
+      },
+      {
+        "name": "FCTUC CHALLENGE",
+        "logo": "/assets/2025/challenges/fctuc-logo.png",
+        "subtitle": "Ensino Superior",
+        "description": "Desafio avançado de navegação autónoma e sensores para equipas universitárias.",
+        "formUrl": "https://forms.gle/fctuc-registration",
+        "rulesUrl": "/assets/2025/rules/fctuc-rules.pdf",
+        "bg": "/assets/2025/challenges/fctuc-bg.jpg"
+      }
+    ]
+  },
+  "schedule": {
+    "title": "Programa",
+    "description": "O programa mostra as sessões, workshops e horas de competição.",
+    "image": "/assets/2025/programa.png"
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "items": [
+      { "q": "Como me registo?", "a": "Use os links de registo em cada prova ou o formulário principal de registo." },
+      { "q": "Quais são as categorias etárias?", "a": "Cada prova indica o nível educacional pretendido (básico, secundário, superior)." },
+      { "q": "Posso formar equipa no local?", "a": "Sim — pode registar-se individualmente e ajudamos a formar equipas sempre que possível." }
+    ]
+  },
+  "previousEdition": {
+    "title": "Edição Anterior",
+    "images": [
+      "/assets/2024/gallery/1.jpg",
+      "/assets/2024/gallery/2.jpg",
+      "/assets/2024/gallery/3.jpg",
+      "/assets/2024/gallery/4.jpg"
+    ]
+  },
+  "sponsors": {
+    "title": "Patrocinadores",
+    "tiers": [
+      {
+        "name": "Institucional",
+        "sponsors": [
+          { "name": "Universidade X", "logo": "/assets/2025/sponsors/uni.png", "url": "https://example.edu" }
+        ]
+      },
+      {
+        "name": "Gold",
+        "sponsors": [
+          { "name": "TechCorp", "logo": "/assets/2025/sponsors/techcorp.png", "url": "https://techcorp.example" }
+        ]
+      }
+    ],
+    "contactNote": "Interessado em patrocinar? Contacte-nos via patrocinios@botolympics.pt."
+  },
+  "team": [
+    { "name": "Luís Ventura", "role": "Coordenação Geral", "img": "/assets/2025/team/luis.jpg" },
+    { "name": "Pedro Fernandes", "role": "Logística", "img": "/assets/2025/team/pedro.jpg" },
+    { "name": "Iara Bento", "role": "Coordenação Voluntários", "img": "/assets/2025/team/iara.jpg" }
+  ],
+  "location": {
+    "title": "Localização",
+    "description": "DEEC, Polo II, Universidade de Coimbra",
+    "mapEmbedUrl": "https://www.google.com/maps?q=DEEC+Polo+II+Coimbra&output=embed"
+  },
+  "footer": {
+    "credit": "© BotOlympics — edite src/locales/*.json para alterar o conteúdo."
+  }
 }

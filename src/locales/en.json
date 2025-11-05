@@ -1,0 +1,12 @@
+{
+  "siteTitle": "Bot Olympics",
+  "welcomeTitle": "Welcome to Bot Olympics",
+  "welcomeText": "A tiny multilingual frontend demo. Edit the JSON files in src/locales to change content.",
+  "features": {
+    "title": "Features",
+    "easyEdit": "Easy content editing via JSON files",
+    "dockerReady": "Docker-ready static build",
+    "simple": "Minimal, easy-to-understand code"
+  },
+  "footer": "Made with ❤️ — edit content in src/locales/*.json"
+}

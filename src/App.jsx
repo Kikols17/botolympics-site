@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function App() {
-  const { t, i18n } =   ();
+  const { t, i18n } = useTranslation();
   const setLang = (lng) => i18n.changeLanguage(lng);
 
   const header = t('header', { returnObjects: true });
@@ -29,7 +29,7 @@ export default function App() {
           <div className="brand-right">
             <button className="lang-btn" onClick={() => setLang('pt')}>PT</button>    
             <button className="lang-btn" onClick={() => setLang('en')}>EN</button>
-            <a className="btn-cta" href={header.registerUrl}>{header.registerText}</a>
+            <a className="btn-cta" href="#challenges">{header.registerText}</a>
           </div>
         </div>
       </header>
@@ -44,38 +44,65 @@ export default function App() {
       </section>
 
       <main>
-        <section className="wrap about-section" id="about">
+        {/*-------------------------- ABOUT SECTION -------------------------*/}
+        <section className="wrap section" id="about">
           <h2>{about.title}</h2>
-          <p>{about.text}</p>
+          <p>{about.text1}</p>
+          <p>{about.text2}</p>
+          <p>{about.text3}</p>
         </section>
 
-        <section className="wrap challenges-section" id="challenges">
+        {/*----------------------- CHALLENGES SECTION -----------------------*/}
+        <section className="wrap section" id="challenges">
           <h2>{challenges.title}</h2>
+          <p>{challenges.text}</p>
           <div className="challenges-grid">
             {challenges.items.map((c, i) => (
               <article key={i} className="challenge-card" style={{ backgroundImage: `url('${c.bg}')` }}>
-                <div className="challenge-top">
-                  <img src={c.logo} alt={`${c.name} logo`} className="challenge-logo" />
-                  <div className="challenge-sub">{c.subtitle}</div>
-                </div>
-                <h3 className="challenge-name">{c.name}</h3>
-                <p className="challenge-desc">{c.description}</p>
-                <div className="challenge-links">
-                  <a className="link-box" href={c.formUrl} target="_blank" rel="noreferrer">Register (Form)</a>
-                  <a className="link-box" href={c.rulesUrl} target="_blank" rel="noreferrer">Rules (PDF)</a>
+                <div className="challenge-overlay">
+                  {/* boxed content */}
+                  <div className="challenge-box">
+                    <div className="challenge-header">
+                      <h3 className="challenge-name">{c.name}</h3>
+                      <img src={c.logo} alt={`${c.name} logo`} className="challenge-logo" />
+                    </div>
+
+                    <div className="divider" />
+
+                    <div className="challenge-level">{c.subtitle}</div>
+
+                    <p className="challenge-desc">{c.description}</p>
+
+                    <div className="challenge-actions">
+                      <a
+                        className="btn-pill btn-pill-primary"
+                        href={c.formUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-disabled={c.cta && c.cta.toLowerCase().includes('closed')}
+                      >
+                        {/* use c.cta for dynamic label */}
+                        {c.cta || 'Register'}
+                      </a>
+
+                      <a className="btn-pill btn-pill-outline" href={c.rulesUrl} target="_blank" rel="noreferrer">
+                        Regulations
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="wrap schedule-section" id="schedule">
+        <section className="wrap section" id="schedule">
           <h2>{schedule.title}</h2>
           <p>{schedule.description}</p>
           <div className="schedule-image"><img src={schedule.image} alt="schedule" /></div>
         </section>
 
-        <section className="wrap faq-section" id="faq">
+        <section className="wrap section" id="faq">
           <h2>{faq.title}</h2>
           <div className="faq-list">
             {faq.items.map((it, i) => (
@@ -87,7 +114,7 @@ export default function App() {
           </div>
         </section>
 
-        <section className="wrap gallery-section" id="previous">
+        <section className="wrap section" id="previous">
           <h2>{previous.title}</h2>
           <div className="gallery-grid">
             {previous.images.map((src, i) => (
@@ -98,7 +125,7 @@ export default function App() {
           </div>
         </section>
 
-        <section className="wrap sponsors-section" id="sponsors">
+        <section className="wrap section" id="sponsors">
           <h2>{sponsors.title}</h2>
           {sponsors.tiers.map((tier, ti) => (
             <div key={ti} className="sponsor-tier">
@@ -115,7 +142,7 @@ export default function App() {
           <p className="sponsor-contact">{sponsors.contactNote}</p>
         </section>
 
-        <section className="wrap team-section" id="team">
+        <section className="wrap section" id="team">
           <h2>Our team</h2>
           <div className="team-grid">
             {team.map((m, i) => (
@@ -128,7 +155,7 @@ export default function App() {
           </div>
         </section>
 
-        <section className="wrap location-section" id="location">
+        <section className="wrap section" id="location">
           <h2>{location.title}</h2>
           <p>{location.description}</p>
           <div className="map-embed">

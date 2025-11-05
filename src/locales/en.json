@@ -1,8 +1,7 @@
 {
   "header": {
     "logo": "/assets/logo.png",
-    "registerText": "Register",
-    "registerUrl": "https://forms.gle/your-registration-form"
+    "registerText": "Register Now!"
   },
   "landing": {
     "background": "/assets/2025/hero.jpg",
@@ -11,10 +10,13 @@
   },
   "about": {
     "title": "About us",
-    "text": "BotOlympics is an annual robotics competition bringing teams, students and enthusiasts together to learn and compete. Each edition features multiple challenges, workshops and community events. This site is maintained to make it easy to update per edition."
+    "text1": "BotOlympics is the University of Coimbra’s robotics competition, organized by Núcleo de Estudantes de Engenharia Eletrotécnica e de Computadores (NEEEC/AAC) and Clube de Robótica da Universidade de Coimbra (CR). It is an educational and formative event that aims to introduce the world of robotics to young aspiring engineers.",
+    "text2": "Consisting of three simultaneous tournaments for students from primary school to university level, the competition takes place in a hackathon environment over the course of four days, where participants have to develop ways of achieving the objectives of each of their respective challenges.",
+    "text3": "Given the wide age range of the participants, BotOlympics is considered one of a kind in Portugal."
   },
   "challenges": {
     "title": "Challenges",
+    "text": "Discover more about the different tournaments and register!",
     "items": [
       {
         "name": "PROVA ISR",

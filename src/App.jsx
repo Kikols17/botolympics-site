@@ -27,8 +27,23 @@ export default function App() {
             <img src={header.logo} alt="logo" className="site-logo" />
           </div>
           <div className="brand-right">
-            <button className="lang-btn" onClick={() => setLang('pt')}>PT</button>    
-            <button className="lang-btn" onClick={() => setLang('en')}>EN</button>
+            {/* language buttons show active state depending on current language */}
+            <button
+              className={`lang-btn ${i18n.language && i18n.language.startsWith('pt') ? 'active' : ''}`}
+              data-lang="pt"
+              onClick={() => setLang('pt')}
+              aria-pressed={i18n.language && i18n.language.startsWith('pt')}
+            >
+              PT
+            </button>
+            <button
+              className={`lang-btn ${i18n.language && i18n.language.startsWith('en') ? 'active' : ''}`}
+              data-lang="en"
+              onClick={() => setLang('en')}
+              aria-pressed={i18n.language && i18n.language.startsWith('en')}
+            >
+              EN
+            </button>
             <a className="btn-cta" href="#challenges">{header.registerText}</a>
           </div>
         </div>
@@ -99,7 +114,7 @@ export default function App() {
         <section className="wrap section" id="schedule">
           <h2>{schedule.title}</h2>
           <p>{schedule.description}</p>
-          <div className="schedule-image"><img src={schedule.image} alt="schedule" /></div>
+          <div className="schedule-image"><img src={schedule.image} alt="Schedule will be available soon!" /></div>
         </section>
 
         <section className="wrap section" id="faq">

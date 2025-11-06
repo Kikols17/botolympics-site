@@ -105,6 +105,8 @@
     "mapEmbedUrl": "https://www.google.com/maps?q=DEEC+Polo+II+Coimbra&output=embed"
   },
   "footer": {
-    "credit": "© BotOlympics — edit src/locales/*.json to update content."
+    "socialsLabel": "Social Media",
+    "contactsLabel": "Contacts",
+    "organizationLabel": "Organization"
   }
 }

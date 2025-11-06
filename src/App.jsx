@@ -16,6 +16,7 @@ export default function App() {
   const sponsors = t('sponsors', { returnObjects: true });
   const team = t('team', { returnObjects: true });
   const location = t('location', { returnObjects: true });
+  const footer = t('footer', { returnObjects: true });
 
   const [openFaq, setOpenFaq] = useState(null);
   const toggleFaq = (i) => setOpenFaq(openFaq === i ? null : i);
@@ -173,9 +174,48 @@ export default function App() {
         </section>
       </main>
 
-      <footer className="site-footer">
+      <footer className="site-footer" role="contentinfo">
         <div className="wrap footer-inner">
-          <div>{t('footer.credit')}</div>
+          <div className="footer-left">
+            <h3>{footer.socialsLabel}</h3>
+            <div className="social-row" aria-label="Social media">
+              <a href="https://www.facebook.com/botolympics" target="_blank" rel="noreferrer" className="social-btn" aria-label="Facebook">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="Facebook" />
+              </a>
+              <a href="https://www.instagram.com/botolympics" target="_blank" rel="noreferrer" className="social-btn" aria-label="Instagram">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" />
+              </a>
+              <a href="https://www.tiktok.com/@botolympics" target="_blank" rel="noreferrer" className="social-btn" aria-label="TikTok">
+                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok" />
+              </a>
+              <a href="https://www.linkedin.com/company/botolympics" target="_blank" rel="noreferrer" className="social-btn" aria-label="LinkedIn">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn" />
+              </a>
+              <a href="https://www.youtube.com/@botolympics" target="_blank" rel="noreferrer" className="social-btn" aria-label="YouTube">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+              </a>
+            </div>
+          </div>
+
+          <div className="footer-center">
+            <h3>{footer.contactsLabel}</h3>
+            <div className="contact-item">
+              <div className="contact-label">General</div>
+              <a href="mailto:geral@botolympics.pt" className="contact-link">geral@botolympics.pt</a>
+            </div>
+            <div className="contact-item">
+              <div className="contact-label">Sponsors</div>
+              <a href="mailto:patrocinios@botolympics.pt" className="contact-link">patrocinios@botolympics.pt</a>
+            </div>
+          </div>
+
+          <div className="footer-right">
+            <h3>{footer.organizationLabel}</h3>
+            <div className="org-logos">
+              <img src="/assets/2025/sponsors/institutional-1.png" alt="Clube de Robótica" className="org-logo" />
+              <img src="/assets/2025/sponsors/institutional-2.png" alt="NEEEC" className="org-logo" />
+            </div>
+          </div>
         </div>
       </footer>
     </div>

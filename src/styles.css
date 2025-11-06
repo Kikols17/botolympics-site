@@ -294,6 +294,73 @@ html, body {
     color: var(--muted);
 }
 
+/* New FAQ layout: use flex so row height doesn't force neighbors to expand */
+.faq-grid-new {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 12px;
+  align-items: flex-start; /* do not stretch items to same height */
+}
+
+/* each card takes ~50% width minus gap */
+.faq-card {
+  /* stronger visible box */
+  width: calc(50% - 7px);
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.03);          /* slightly brighter, visible on dark bg */
+  border: 1px solid rgba(255,255,255,0.08);    /* more pronounced border */
+  border-radius: 12px;
+  padding: 14px;
+  cursor: pointer;
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);     /* subtle base shadow */
+}
+
+/* hover/active affordance */
+.faq-card:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(0,0,0,0.55); }
+.faq-card.open { transform: translateY(-3px); box-shadow: 0 22px 48px rgba(0,0,0,0.65); background: rgba(255,255,255,0.035); }
+
+/* head row: ensure header has clear separation and always visible */
+.faq-card-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.03); /* separator under header */
+}
+
+/* keep question visually prominent */
+.faq-question {
+  font-weight:700;
+  font-size:16px;
+  text-align:left;
+  color:var(--text);
+  line-height:1.2;
+}
+
+/* body animation container (unchanged behavior) */
+.faq-card-body {
+  overflow: hidden;
+  transition: height 360ms cubic-bezier(.2,.9,.2,1), opacity 220ms ease, transform 300ms cubic-bezier(.2,.9,.2,1);
+  margin-top: 10px;
+}
+
+/* inner content */
+.faq-inner { padding-top:6px; padding-bottom:6px; color:var(--muted); text-align:left; }
+
+/* responsive: one column on small screens */
+@media (max-width: 600px) {
+  .faq-grid-new { gap: 12px; }
+  .faq-card { width: 100%; }
+  .faq-question { font-size:15px; }
+}
+
 /* GALLERY */
 .gallery-grid {
     display: grid;
@@ -369,6 +436,35 @@ html, body {
     margin-top: 28px;
     color: var(--muted);
     text-align: center;
+}
+
+/* subtle 2px lift on hover/focus for all primary button-like elements */
+.btn-cta,
+.btn-pill,
+.lang-btn,
+.link-box,
+.btn-ghost,
+.btn-pill-primary,
+.btn-pill-outline {
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  will-change: transform;
+}
+
+.btn-cta:hover,
+.btn-cta:focus,
+.btn-pill:hover,
+.btn-pill:focus,
+.lang-btn:hover,
+.lang-btn:focus,
+.link-box:hover,
+.link-box:focus,
+.btn-ghost:hover,
+.btn-ghost:focus,
+.btn-pill-primary:hover,
+.btn-pill-primary:focus,
+.btn-pill-outline:hover,
+.btn-pill-outline:focus {
+  transform: translateY(-2px);
 }
 
 /* RESPONSIVE */

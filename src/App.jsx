@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import FaqList from './components/FaqList';
 
 export default function App() {
   const { t, i18n } = useTranslation();
@@ -119,14 +120,7 @@ export default function App() {
 
         <section className="wrap section" id="faq">
           <h2>{faq.title}</h2>
-          <div className="faq-list">
-            {faq.items.map((it, i) => (
-              <div key={i} className={`faq-item ${openFaq === i ? 'open' : ''}`}>
-                <button className="faq-q" onClick={() => toggleFaq(i)}>{it.q} <span>{openFaq===i? '–':'+'}</span></button>
-                {openFaq===i && <div className="faq-a"><p>{it.a}</p></div>}
-              </div>
-            ))}
-          </div>
+          <FaqList items={faq.items} />
         </section>
 
         <section className="wrap section" id="previous">

@@ -87,6 +87,29 @@
   "footer": {
     "socialsLabel": "Social Media",
     "contactsLabel": "Contacts",
-    "organizationLabel": "Organization"
+    "organizationLabel": "Organization",
+    "socials": [
+      { "name": "Facebook",  "url": "https://www.facebook.com/botolympics",  "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384053.png" },
+      { "name": "Instagram", "url": "https://www.instagram.com/botolympics", "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384063.png" },
+      { "name": "TikTok",    "url": "https://www.tiktok.com/@botolympics",    "icon": "https://cdn-icons-png.flaticon.com/512/3046/3046126.png" },
+      { "name": "LinkedIn",  "url": "https://www.linkedin.com/company/botolympics", "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384014.png" },
+      { "name": "YouTube",   "url": "https://www.youtube.com/@botolympics",    "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384060.png" }
+    ],
+    "contacts": [
+      { "label": "General",  "email": "geral@botolympics.pt" },
+      { "label": "Sponsors", "email": "patrocinios@botolympics.pt" }
+    ],
+    "organizations": [
+      {
+        "name": "Clube de Robótica",
+        "url": "https://clrobotica.deec.uc.pt",
+        "logo": "/assets/2025/sponsors/institutional-1.png"
+      },
+      {
+        "name": "NEEEC",
+        "url": "https://neeec.pt",
+        "logo": "/assets/2025/sponsors/institutional-2.png"
+      }
+    ]
   }
 }

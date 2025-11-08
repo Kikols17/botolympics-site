@@ -185,41 +185,39 @@ export default function App() {
           <div className="footer-left">
             <h3>{footer.socialsLabel}</h3>
             <div className="social-row" aria-label="Social media">
-              <a href="https://www.facebook.com/botolympics" target="_blank" rel="noreferrer" className="social-btn" aria-label="Facebook">
-                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="Facebook" />
-              </a>
-              <a href="https://www.instagram.com/botolympics" target="_blank" rel="noreferrer" className="social-btn" aria-label="Instagram">
-                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" />
-              </a>
-              <a href="https://www.tiktok.com/@botolympics" target="_blank" rel="noreferrer" className="social-btn" aria-label="TikTok">
-                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok" />
-              </a>
-              <a href="https://www.linkedin.com/company/botolympics" target="_blank" rel="noreferrer" className="social-btn" aria-label="LinkedIn">
-                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn" />
-              </a>
-              <a href="https://www.youtube.com/@botolympics" target="_blank" rel="noreferrer" className="social-btn" aria-label="YouTube">
-                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
-              </a>
+              {Array.isArray(footer.socials) && footer.socials.map((s, idx) => (
+                <a
+                  key={idx}
+                  href={s.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-btn"
+                  aria-label={s.name}
+                >
+                  <img src={s.icon} alt={s.name} />
+                </a>
+              ))}
             </div>
           </div>
 
           <div className="footer-center">
             <h3>{footer.contactsLabel}</h3>
-            <div className="contact-item">
-              <div className="contact-label">General</div>
-              <a href="mailto:geral@botolympics.pt">geral@botolympics.pt</a>
-            </div>
-            <div className="contact-item">
-              <div className="contact-label">Sponsors</div>
-              <a href="mailto:patrocinios@botolympics.pt">patrocinios@botolympics.pt</a>
-            </div>
+            {Array.isArray(footer.contacts) && footer.contacts.map((c, ci) => (
+              <div key={ci} className="contact-item">
+                <div className="contact-label">{c.label}</div>
+                <a href={`mailto:${c.email}`}>{c.email}</a>
+              </div>
+            ))}
           </div>
 
           <div className="footer-right">
             <h3>{footer.organizationLabel}</h3>
             <div className="org-logos">
-              <img src="/assets/2025/sponsors/institutional-1.png" alt="Clube de Robótica" className="org-logo" />
-              <img src="/assets/2025/sponsors/institutional-2.png" alt="NEEEC" className="org-logo" />
+              {Array.isArray(footer.organizations) && footer.organizations.map((o, oi) => (
+                <a key={oi} href={o.url} target="_blank" rel="noreferrer" title={o.name}>
+                  <img src={o.logo} alt={o.name} className="org-logo" />
+                </a>
+              ))}
             </div>
           </div>
         </div>

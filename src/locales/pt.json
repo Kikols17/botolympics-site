@@ -1,7 +1,7 @@
 {
   "header": {
     "logo": "/assets/logo.png",
-    "registerText": "Inscreve-te"
+    "registerText": "Register Now!"
   },
   "landing": {
     "background": "/assets/2025/hero.jpg",
@@ -10,7 +10,9 @@
   },
   "about": {
     "title": "About us",
-    "text": "BotOlympics is an annual robotics competition bringing teams, students and enthusiasts together to learn and compete. Each edition features multiple challenges, workshops and community events. This site is maintained to make it easy to update per edition."
+    "text1": "BotOlympics is the University of Coimbra’s robotics competition, organized by Núcleo de Estudantes de Engenharia Eletrotécnica e de Computadores (NEEEC/AAC) and Clube de Robótica da Universidade de Coimbra (CR). It is an educational and formative event that aims to introduce the world of robotics to young aspiring engineers.",
+    "text2": "Consisting of three simultaneous tournaments for students from primary school to university level, the competition takes place in a hackathon environment over the course of four days, where participants have to develop ways of achieving the objectives of each of their respective challenges.",
+    "text3": "Given the wide age range of the participants, BotOlympics is considered one of a kind contest in Portugal."
   },
   "challenges": {
     "title": "Challenges",
@@ -24,15 +26,6 @@
         "formUrl": "https://forms.gle/isr-registration",
         "rulesUrl": "/assets/2025/rules/isr-rules.pdf",
         "bg": "/assets/2025/challenges/isr-bg.jpg"
-      },
-      {
-        "name": "BOT'N ROLL",
-        "logo": "/assets/2025/challenges/botr-logo.png",
-        "subtitle": "Secondary level",
-        "description": "Timed navigation and payload delivery challenge using Arduino based robots.",
-        "formUrl": "https://forms.gle/botr-registration",
-        "rulesUrl": "/assets/2025/rules/botr-rules.pdf",
-        "bg": "/assets/2025/challenges/botr-bg.jpg"
       },
       {
         "name": "FCTUC CHALLENGE",
@@ -51,7 +44,7 @@
     "image": "/assets/2025/programa.png"
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Frequently Asked Questions",
     "items": [
       { "q": "How do I register?", "a": "Use the registration links in each challenge box or visit the main registration form." },
       { "q": "What are the age categories?", "a": "Each challenge lists the intended educational level (elementary, secondary, university)." },
@@ -61,10 +54,6 @@
   "previousEdition": {
     "title": "Previous Edition",
     "images": [
-      "/assets/2024/gallery/1.jpg",
-      "/assets/2024/gallery/2.jpg",
-      "/assets/2024/gallery/3.jpg",
-      "/assets/2024/gallery/4.jpg"
     ]
   },
   "sponsors": {
@@ -73,29 +62,22 @@
       {
         "name": "Institutional",
         "sponsors": [
-          { "name": "University of X", "logo": "/assets/2025/sponsors/uni.png", "url": "https://example.edu" }
         ]
       },
       {
         "name": "Gold",
         "sponsors": [
-          { "name": "TechCorp", "logo": "/assets/2025/sponsors/techcorp.png", "url": "https://techcorp.example" },
-          { "name": "RoboticsInc", "logo": "/assets/2025/sponsors/roboticsinc.png", "url": "https://roboticsinc.example" }
         ]
       },
       {
         "name": "Silver",
         "sponsors": [
-          { "name": "LocalShop", "logo": "/assets/2025/sponsors/localshop.png", "url": "https://localshop.example" }
         ]
       }
     ],
     "contactNote": "Interested in sponsoring our event? Contact us via patrocinios@botolympics.pt."
   },
   "team": [
-    { "name": "Luís Ventura", "role": "General Coordination", "img": "/assets/2025/team/luis.jpg" },
-    { "name": "Pedro Fernandes", "role": "Logistics", "img": "/assets/2025/team/pedro.jpg" },
-    { "name": "Iara Bento", "role": "Volunteer Coordinator", "img": "/assets/2025/team/iara.jpg" }
   ],
   "location": {
     "title": "Location",

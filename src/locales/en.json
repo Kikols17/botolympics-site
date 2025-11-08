@@ -28,15 +28,6 @@
         "bg": "/assets/2025/challenges/isr-bg.jpg"
       },
       {
-        "name": "BOT'N ROLL",
-        "logo": "/assets/2025/challenges/botr-logo.png",
-        "subtitle": "Secondary level",
-        "description": "Timed navigation and payload delivery challenge using Arduino based robots.",
-        "formUrl": "https://forms.gle/botr-registration",
-        "rulesUrl": "/assets/2025/rules/botr-rules.pdf",
-        "bg": "/assets/2025/challenges/botr-bg.jpg"
-      },
-      {
         "name": "FCTUC CHALLENGE",
         "logo": "/assets/2025/challenges/fctuc-logo.png",
         "subtitle": "University level",
@@ -63,10 +54,6 @@
   "previousEdition": {
     "title": "Previous Edition",
     "images": [
-      "/assets/2024/gallery/1.jpg",
-      "/assets/2024/gallery/2.jpg",
-      "/assets/2024/gallery/3.jpg",
-      "/assets/2024/gallery/4.jpg"
     ]
   },
   "sponsors": {
@@ -75,29 +62,22 @@
       {
         "name": "Institutional",
         "sponsors": [
-          { "name": "University of X", "logo": "/assets/2025/sponsors/uni.png", "url": "https://example.edu" }
         ]
       },
       {
         "name": "Gold",
         "sponsors": [
-          { "name": "TechCorp", "logo": "/assets/2025/sponsors/techcorp.png", "url": "https://techcorp.example" },
-          { "name": "RoboticsInc", "logo": "/assets/2025/sponsors/roboticsinc.png", "url": "https://roboticsinc.example" }
         ]
       },
       {
         "name": "Silver",
         "sponsors": [
-          { "name": "LocalShop", "logo": "/assets/2025/sponsors/localshop.png", "url": "https://localshop.example" }
         ]
       }
     ],
     "contactNote": "Interested in sponsoring our event? Contact us via patrocinios@botolympics.pt."
   },
   "team": [
-    { "name": "Luís Ventura", "role": "General Coordination", "img": "/assets/2025/team/luis.jpg" },
-    { "name": "Pedro Fernandes", "role": "Logistics", "img": "/assets/2025/team/pedro.jpg" },
-    { "name": "Iara Bento", "role": "Volunteer Coordinator", "img": "/assets/2025/team/iara.jpg" }
   ],
   "location": {
     "title": "Location",

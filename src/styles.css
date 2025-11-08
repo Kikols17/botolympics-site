@@ -108,14 +108,12 @@ html, body {
 
 /* LANDING */
 .landing {
-    /* changed: full viewport height so landing takes the entire screen on first load */
     height: 100vh;
-    min-height: 520px;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
-    justify-content: center; /* center vertically and horizontally */
+    justify-content: center;
 }
 
 .landing-inner {

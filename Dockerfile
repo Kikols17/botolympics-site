@@ -9,17 +9,20 @@ COPY . .
 # fail early if translations shapes mismatch; prevents creating an image that would serve an inconsistent site
 RUN npm run check:i18n && npm run build
 
-# Stage 2: serve with nginx
-FROM nginx:stable-alpine
+# Stage 2: run a small Node static server (no nginx / reverse proxy)
+FROM node:18-alpine AS runner
 LABEL maintainer="you@example.com"
-ARG APP_PORT=80
-ENV NGINX_PORT=${APP_PORT}
-COPY --from=builder /app/dist /usr/share/nginx/html
-# optional: custom nginx conf could be added here
-EXPOSE ${APP_PORT}
-# small healthcheck (requires wget)
-HEALTHCHECK --interval=30s --timeout=5s --start-period=5s \
-  CMD wget --no-verbose --tries=1 --spider http://127.0.0.1:${APP_PORT}/ || exit 1
+ARG APP_PORT=8080
+ENV APP_PORT=${APP_PORT}
+WORKDIR /app
 
-# default command runs nginx in foreground
-CMD ["nginx", "-g", "daemon off;"]
+# copy built static files
+COPY --from=builder /app/dist /app/dist
+
+# copy the small server file
+COPY --from=builder /app/server.js /app/server.js
+
+EXPOSE ${APP_PORT}
+
+# start the node static server
+CMD ["node", "/app/server.js"]

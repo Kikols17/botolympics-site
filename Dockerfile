@@ -6,7 +6,8 @@ WORKDIR /app
 COPY package.json package-lock.json* ./
 RUN npm ci --silent || npm install --silent
 COPY . .
-RUN npm run build
+# fail early if translations shapes mismatch; prevents creating an image that would serve an inconsistent site
+RUN npm run check:i18n && npm run build
 
 # Stage 2: serve with nginx
 FROM nginx:stable-alpine

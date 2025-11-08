@@ -149,7 +149,13 @@ export default function App() {
               </div>
             </div>
           ))}
-          <p className="sponsor-contact">{sponsors.contactNote}</p>
+          <p className="sponsor-contact" dangerouslySetInnerHTML={{
+            __html: sponsors.contactNote.replace(
+              /* email regex to convert all email in the text to mailto link */
+              /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi,
+              (email) => `<a href="mailto:${email}">${email}</a>`
+            )
+          }} />
         </section>
 
         <section className="wrap section" id="team">
@@ -201,11 +207,11 @@ export default function App() {
             <h3>{footer.contactsLabel}</h3>
             <div className="contact-item">
               <div className="contact-label">General</div>
-              <a href="mailto:geral@botolympics.pt" className="contact-link">geral@botolympics.pt</a>
+              <a href="mailto:geral@botolympics.pt">geral@botolympics.pt</a>
             </div>
             <div className="contact-item">
               <div className="contact-label">Sponsors</div>
-              <a href="mailto:patrocinios@botolympics.pt" className="contact-link">patrocinios@botolympics.pt</a>
+              <a href="mailto:patrocinios@botolympics.pt">patrocinios@botolympics.pt</a>
             </div>
           </div>
 

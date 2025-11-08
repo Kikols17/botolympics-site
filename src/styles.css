@@ -457,7 +457,6 @@ html, body {
 .footer-center h3 { margin:0 0 8px; color:var(--text); font-size:22px; }
 .contact-item { margin:10px 0; }
 .contact-label { font-weight:700; color:var(--muted); margin-bottom:4px; }
-.contact-link { color: #bfefff; text-decoration:underline; font-weight:600; }
 
 /* RIGHT: organization logos */
 .footer-right { text-align:left; display:flex; flex-direction:column; gap:10px; align-items:center; }
@@ -475,6 +474,20 @@ html, body {
   .site-search { width: 220px; }
   .footer-right { align-items:center; }
   .org-logos { justify-content:center; }
+}
+
+/* Make default link color use the theme accent instead of browser blue */
+a, a:visited {
+  color: var(--accent);
+  text-decoration: underline;
+  outline: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-2);
+  text-decoration: underline;
+  outline: none;
 }
 
 /* subtle 2px lift on hover/focus for all primary button-like elements */

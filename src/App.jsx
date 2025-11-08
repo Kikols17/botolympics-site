@@ -74,42 +74,54 @@ export default function App() {
           <h2>{challenges.title}</h2>
           <p>{challenges.text}</p>
           <div className="challenges-grid">
-            {challenges.items.map((c, i) => (
-              <article key={i} className="challenge-card" style={{ backgroundImage: `url('${c.bg}')` }}>
-                <div className="challenge-overlay">
-                  {/* boxed content */}
-                  <div className="challenge-box">
-                    <div className="challenge-header">
-                      <h3 className="challenge-name">{c.name}</h3>
-                      <img src={c.logo} alt={`${c.name} logo`} className="challenge-logo" />
-                    </div>
+            {challenges.items.map((c, i) => {
+              const state = (c.state || '').toLowerCase();
+              const isBefore = state.includes('before');
+              const isAfter = state.includes('after');
+              const isClosed = isBefore || isAfter;
+              const regLabel = isBefore
+                ? challenges.registerBeforeLabel
+                : isAfter
+                ? challenges.registerAfterLabel
+                : challenges.registerOpenLabel;
 
-                    <div className="divider" />
+              return (
+                <article key={i} className="challenge-card" style={{ backgroundImage: `url('${c.bg}')` }}>
+                  <div className="challenge-overlay">
+                    {/* boxed content */}
+                    <div className="challenge-box">
+                      <div className="challenge-header">
+                        <h3 className="challenge-name">{c.name}</h3>
+                        <img src={c.logo} alt={`${c.name} logo`} className="challenge-logo" />
+                      </div>
 
-                    <div className="challenge-level">{c.subtitle}</div>
+                      <div className="divider" />
 
-                    <p className="challenge-desc">{c.description}</p>
+                      <div className="challenge-level">{c.subtitle}</div>
 
-                    <div className="challenge-actions">
-                      <a
-                        className="btn-pill btn-pill-primary"
-                        href={c.formUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-disabled={c.cta && c.cta.toLowerCase().includes('closed')}
-                      >
-                        {/* use c.cta for dynamic label */}
-                        {c.cta || 'Register'}
-                      </a>
+                      <p className="challenge-desc">{c.description}</p>
 
-                      <a className="btn-pill btn-pill-outline" href={c.rulesUrl} target="_blank" rel="noreferrer">
-                        Regulations
-                      </a>
+                      <div className="challenge-actions">
+                        <a
+                          className="btn-pill btn-pill-primary"
+                          href={isClosed ? undefined : c.formUrl}
+                          target={isClosed ? undefined : "_blank"}
+                          rel={isClosed ? undefined : "noreferrer"}
+                          aria-disabled={isClosed}
+                          onClick={(e) => { if (isClosed) e.preventDefault(); }}
+                        >
+                          {regLabel}
+                        </a>
+
+                        <a className="btn-pill btn-pill-outline" href={c.rulesUrl} target="_blank" rel="noreferrer">
+                          {challenges.regulationLabel}
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </section>
 

@@ -17,6 +17,10 @@
   "challenges": {
     "title": "Challenges",
     "text": "Discover more about the different tournaments and register!",
+    "registerOpenLabel": "Register",
+    "registerBeforeLabel": "Registrations open soon",
+    "registerAfterLabel": "Registrations full",
+    "regulationLabel": "Regulations",
     "items": [
       {
         "name": "PROVA ISR",
@@ -25,7 +29,8 @@
         "description": "Teams program a simple autonomous robot to follow lines and complete tasks.",
         "formUrl": "https://forms.gle/isr-registration",
         "rulesUrl": "/assets/2025/rules/isr-rules.pdf",
-        "bg": "/assets/2025/challenges/isr-bg.jpg"
+        "bg": "/assets/2025/challenges/isr-bg.jpg",
+        "state": "before closed"
       },
       {
         "name": "FCTUC CHALLENGE",
@@ -34,7 +39,8 @@
         "description": "Advanced autonomous navigation and sensing challenge for university teams.",
         "formUrl": "https://forms.gle/fctuc-registration",
         "rulesUrl": "/assets/2025/rules/fctuc-rules.pdf",
-        "bg": "/assets/2025/challenges/fctuc-bg.jpg"
+        "bg": "/assets/2025/challenges/fctuc-bg.jpg",
+        "state": "after closed"
       }
     ]
   },

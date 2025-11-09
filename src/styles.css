@@ -141,7 +141,7 @@ html, body {
 /* CHALLENGES */
 .challenges-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 18px;
     margin-top: 18px;
 }
@@ -150,12 +150,13 @@ html, body {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    height: 420px;
+    height: auto;
+    min-height: 0;
     background-size: cover;
     background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    display: block;
+    width: 100%;
+    padding: 20px 0;
 }
 
 .challenge-top {
@@ -169,19 +170,18 @@ html, body {
 }
 
 .challenge-overlay {
-    position: absolute;
-    inset: 0;
+    position: relative;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.6));
     padding: 16px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center; /* center the box horizontally */
+    align-items: flex-start;
 }
 
 .challenge-box {
-    width: 95%;
-    max-width: 620px;
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
     background: linear-gradient(180deg, rgba(10,20,40,0.22), rgba(8,12,20,0.46));
     border-radius: 12px;
     padding: 28px 30px;
@@ -189,7 +189,7 @@ html, body {
     backdrop-filter: blur(6px);
     color: #fff;
     text-align: left;
-    margin: 8px auto;
+    margin: 8px 0;
 }
 
 /* header row inside the box */
@@ -205,20 +205,27 @@ html, body {
 .challenge-desc { color: rgba(255,255,255,0.92); line-height:1.45; margin:0 0 12px; }
 
 /* pill buttons row */
-.challenge-actions { display:flex; gap:12px; justify-content:center; margin-top:6px; flex-wrap:wrap; }
+.challenge-actions {
+    display: flex;
+    flex-direction: column; /* stack buttons vertically so each can take full width */
+    gap: 12px;
+    margin-top: 6px;
+    /* removed justify-content and flex-wrap so buttons occupy available width */
+}
 .btn-pill {
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:12px 18px;
-    border-radius:999px;
-    font-weight:700;
-    text-decoration:none;
-    color:#fff;
-    min-width:190px;
-    justify-content:center;
-    box-shadow:0 8px 18px rgba(3,6,12,0.45);
-    border:0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 999px; /* less extreme rounding when full-width */
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    width: 100%;      /* occupy whole width of the parent (.challenge-box) */
+    min-width: 0;     /* allow width:100% to take effect */
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(3,6,12,0.45);
+    border: 0;
 }
 
 /* primary filled pill (cyan) */

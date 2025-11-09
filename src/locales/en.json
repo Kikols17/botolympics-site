@@ -52,9 +52,66 @@
   "faq": {
     "title": "Frequently Asked Questions",
     "items": [
-      { "q": "How do I register?", "a": "Use the registration links in each challenge box or visit the main registration form." },
-      { "q": "What are the age categories?", "a": "Each challenge lists the intended educational level (elementary, secondary, university)." },
-      { "q": "Can I form a team on-site?", "a": "Yes — individuals can register and we will help find teammates where possible." }
+      {
+        "q": "How do I register?",
+        "a": "Registration is limited to the number of spots available and can be done here. Please note that when registering you will need to have all your team’s details collected, including a passport photo of each member, a declaration of permission from your guardian (if applicable) and proof of payment at the event."
+      },
+      {
+        "q": "Is it compulsory to take part in all moments of the challenge?",
+        "a": "Our aim is to provide a learning environment, team spirit and encourage students’ problem-solving skills. To this end, teams must take part in all stages of the event and must be accompanied by their tutor (if applicable) at all times."
+      },
+      {
+        "q": "How much does it cost to register?",
+        "a": "Participation in this event costs €17.50 per participant and covers all meals and material needed for the competition. Participants also receive a goodie bag, an event T-shirt, a cultural visit and access to all the activities on the event programme. Participation of tutors is free of charge."
+      },
+      {
+        "q": "What meals are provided by the organisation?",
+        "a": "All meals are provided by the organisation (breakfast, lunch and dinner). There will also be regular coffee breaks throughout the day. Coffee is also provided by the organisation throughout the event, except at the final venue."
+      },
+      {
+        "q": "I would like a receipt, how do I proceed?",
+        "a": "The registration receipt will be issued to all members, so you will be asked for your tax number (NIF) when you register and it will be sent to your e-mail address as soon as it has been issued. The receipt is issued by the financial services of the Academic Association of Coimbra and not by the BotOlympics Organising Committee, so this process may take some time."
+      },
+      {
+        "q": "What kind of certificate are we entitled to?",
+        "a": "All event participants, mentors and volunteers will receive a certificate of participation in the event, issued by the BotOlympics Organising Committee and certified by the Director of the Department of Electrical and Computer Engineering at FCTUC. UC students will also receive a diploma supplement issued by the Academic Management Services of the University of Coimbra, as well as justification for absences should you have to miss any classes."
+      },
+      {
+        "q": "I don’t have a team, now what?",
+        "a": "All teams must have 4 members. Only in the case of higher education competitions (FCTUC) is it possible to register individually. In this case, registration will be confirmed when 3 more participants are in the same position and can thus form a team."
+      },
+      {
+        "q": "How does the competition work according to the schedule?",
+        "a": "The schedules will be strict for essential meals (breakfast, lunch and dinner), the first day’s training sessions and the final competition. Aside from this, participants are free to work (or sleep) whenever they please."
+      },
+      {
+        "q": "Is there transport during the event?",
+        "a": "Transport during the event is provided by the organisation, both for the cultural visit and for the Grand Finale’s venue."
+      },
+      {
+        "q": "Where are we staying?",
+        "a": "Both the participants and the accompanying tutors will stay at the Department of Electrical and Computer Engineering (DEEC). Teams may choose to stay elsewhere, but all the logistics and costs will be assumed by them or the school (if applicable)."
+      },
+      {
+        "q": "I want to volunteer, what benefits do I get and how can I sign up?",
+        "a": "Volunteers are entitled to the same benefits as participants (food, changing rooms, transport, overnight accommodation and a certificate). Registration is also available on the BotOlympics website during the period publicised on social media."
+      },
+      {
+        "q": "In the case of primary and high school tournaments, is it possible to register more than one team per school?",
+        "a": "Yes, there can be more than one team per school. However, each event supports a limited number of teams. Teams are approved once the registration fee has been paid and if there is more than one team, we prioritize the registration of the first team from each school, while the others will be placed on a waiting list."
+      },
+      {
+        "q": "I would like to buy a robot after the event, what should I do?",
+        "a": "If you want to buy one of the robot models for the ISR or Bot’N Roll competitions, you can do so for less than the usual retail price. The purchase is made to order so you should show interest at the time of registration."
+      },
+      {
+        "q": "What material should I bring to the competition?",
+        "a": "You should bring personal hygiene equipment (slippers, towels, etc.), a sleeping bag, a mattress or equivalent, clothes for the duration of the event, among other items that you consider necessary for the purpose. For the actual tournament, you should bring your own computer (at least one per team)."
+      },
+      {
+        "q": "I have overlapping classes with the event, now what?",
+        "a": "Attendance at the event, in particular the opening session and workshops, is compulsory. If you have classes at the same time, you will be entitled to a certificate of attendance to excuse any absences."
+      }
     ]
   },
   "previousEdition": {
@@ -67,16 +124,25 @@
     "tiers": [
       {
         "name": "Institutional",
+        "color": "#ff003d",
+        "sponsors": [
+        ]
+      },
+      {
+        "name": "Diamond",
+        "color": "#00cbff",
         "sponsors": [
         ]
       },
       {
         "name": "Gold",
+        "color": "#edd200",
         "sponsors": [
         ]
       },
       {
         "name": "Silver",
+        "color": "#ececec",
         "sponsors": [
         ]
       }

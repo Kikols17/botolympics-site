@@ -169,7 +169,7 @@ export default function App() {
           <h2>{sponsors.title}</h2>
           {sponsors.tiers.map((tier, ti) => (
             <div key={ti} className="sponsor-tier">
-              <h3 className="tier-name">{tier.name}</h3>
+              <h3 className="tier-name" style={{ color: tier.color }}>{tier.name}</h3>
               <div className="tier-logos">
                 {tier.sponsors.map((s, si) => (
                   <a key={si} href={s.url} target="_blank" rel="noreferrer" className="sponsor-link">

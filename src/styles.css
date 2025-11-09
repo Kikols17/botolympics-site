@@ -378,13 +378,13 @@ html, body {
 .sponsor-tier {
     margin-top: 18px;
     padding-top: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .tier-name {
     font-weight: 700;
     color: var(--accent-2);
     margin-bottom: 8px;
+    font-size: 30px;
 }
 
 .tier-logos {
@@ -397,6 +397,14 @@ html, body {
 .tier-logos img {
     max-height: 60px;
     filter: grayscale(0.02);
+}
+
+.tier-underline {
+  height: 4px;
+  width: 100%;
+  margin: 8px 0 18px;
+  border-radius: 2px;
+  /* color is set inline from the React component via style={{ backgroundColor: tier.color }} */
 }
 
 /* TEAM */

@@ -167,9 +167,21 @@ export default function App() {
 
         <section className="wrap section" id="sponsors">
           <h2>{sponsors.title}</h2>
+          <p dangerouslySetInnerHTML={{
+            __html: sponsors.description.replace(
+              /* email regex to convert all email in the text to mailto link */
+              /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi,
+              (email) => `<a href="mailto:${email}">${email}</a>`
+            )
+          }} />
           {sponsors.tiers.map((tier, ti) => (
-            <div key={ti} className="sponsor-tier">
+            <div key={ti} className="sponsor-tier" style={{ textAlign: ti % 2 === 1 ? 'left' : 'right' }}>
               <h3 className="tier-name" style={{ color: tier.color }}>{tier.name}</h3>
+              {/* colored underline matching the tier color */}
+              <div
+                className="tier-underline"
+                style={{ backgroundColor: tier.color }}
+              />
               <div className="tier-logos">
                 {tier.sponsors.map((s, si) => (
                   <a key={si} href={s.url} target="_blank" rel="noreferrer" className="sponsor-link">

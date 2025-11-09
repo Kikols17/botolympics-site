@@ -38,6 +38,18 @@ export default function App() {
     return () => { mounted = false; clearInterval(intervalId); };
   }, []);
 
+  // ensure PT is the default on first visit (do not override an existing preference)
+  useEffect(() => {
+    try {
+      const stored = typeof localStorage !== 'undefined' ? localStorage.getItem('i18nextLng') : null;
+      if (!stored) {
+        i18n.changeLanguage('pt');
+      }
+    } catch (e) {
+      // ignore (e.g. localStorage not available)
+    }
+  }, [i18n]);
+
   return (
     <div className="bo-site">
       <header className="bo-header">

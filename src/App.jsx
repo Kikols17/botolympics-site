@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import FaqList from './components/FaqList';
 
@@ -157,20 +157,24 @@ export default function App() {
 
   // dynamic previous edition gallery (array of image URLs)
   const [previousGallery, setPreviousGallery] = useState(Array.isArray(previous.images) ? previous.images : []);
+  // prevent double-fetch in strict/dev — still fetch only once per full page load
+  const galleryFetchedRef = useRef(false);
+
   // per-image random metadata used to vary size/offset/overlap/z-index
   const [galleryMeta, setGalleryMeta] = useState([]);
 
-  // fetch gallery (supports a directory path string in previous.images or previous.galleryPath)
+  // fetch gallery once on initial mount (reload). This avoids repeated requests when the app rerenders.
   useEffect(() => {
+    if (galleryFetchedRef.current) return; // already done
+    galleryFetchedRef.current = true;
     let mounted = true;
-    let intervalId = null;
 
     const dir = (typeof previous.images === 'string' && previous.images.trim())
       ? previous.images.trim()
       : (previous.galleryPath && typeof previous.galleryPath === 'string' ? previous.galleryPath : null);
 
     const fetchGallery = async () => {
-      if (!dir) return;
+      if (!dir || !mounted) return;
       try {
         const res = await fetch(`/_gallery?dir=${encodeURIComponent(dir)}`);
         if (!res.ok) return;
@@ -179,19 +183,17 @@ export default function App() {
       } catch (e) { /* ignore, keep previousGallery as-is */ }
     };
 
-    // If explicit images array present in locale, use it and skip polling
+    // use explicit locale images if present; otherwise, perform a single fetch
     if (Array.isArray(previous.images) && previous.images.length) {
       setPreviousGallery(previous.images);
     } else if (dir) {
-      // initial fetch + periodic polling to reflect add/remove
       fetchGallery();
-      intervalId = setInterval(fetchGallery, 4000);
     } else {
       setPreviousGallery([]);
     }
 
-    return () => { mounted = false; if (intervalId) clearInterval(intervalId); };
-  }, [previous]);
+    return () => { mounted = false; };
+  }, []); // run once on mount
 
   // generate random layout metadata whenever the gallery list changes
   useEffect(() => {

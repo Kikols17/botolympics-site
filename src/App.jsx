@@ -157,6 +157,8 @@ export default function App() {
 
   // dynamic previous edition gallery (array of image URLs)
   const [previousGallery, setPreviousGallery] = useState(Array.isArray(previous.images) ? previous.images : []);
+  // per-image random metadata used to vary size/offset/overlap/z-index
+  const [galleryMeta, setGalleryMeta] = useState([]);
 
   // fetch gallery (supports a directory path string in previous.images or previous.galleryPath)
   useEffect(() => {
@@ -190,6 +192,47 @@ export default function App() {
 
     return () => { mounted = false; if (intervalId) clearInterval(intervalId); };
   }, [previous]);
+
+  // generate random layout metadata whenever the gallery list changes
+  useEffect(() => {
+    if (!previousGallery || !previousGallery.length) {
+      setGalleryMeta([]);
+      return;
+    }
+    // print
+    console.log('Gallery metadata:', galleryMeta);
+    // create deterministic-ish randomness per filename using simple hash so re-renders remain stable
+    const hashSeed = (s) => {
+      let h = 2166136261 >>> 0;
+      for (let i = 0; i < s.length; i++) {
+        h ^= s.charCodeAt(i);
+        h = Math.imul(h, 16777619) >>> 0;
+      }
+      return h;
+    };
+
+    const makeMeta = (src, i) => {
+      const seed = hashSeed(src + '|' + i);
+      const rnd = (a, b) => {
+        // xorshift-ish using seed
+        const v = ((seed + i * 9973) ^ (seed >>> (i % 7))) >>> 0;
+        const x = (v % (b - a + 1)) + a;
+        return x;
+      };
+      return {
+        // reduced base sizes so images appear smaller
+        h: rnd(120, 220),           // image height (unchanged)
+        ty: rnd(-90, 90),          // vertical translate
+        rotate: (rnd(-6, 6)),      // small rotation
+        z: rnd(1, 12),             // z-index for overlap ordering
+        // smaller negative margin => more space between items (less overlap)
+        ml: -rnd(6, 40)           // negative margin-left to overlap previous item (reduced)
+      };
+    };
+
+    const meta = previousGallery.map((src, i) => makeMeta(src, i));
+    setGalleryMeta(meta);
+  }, [previousGallery]);
 
   return (
     <div className="bo-site">
@@ -317,11 +360,28 @@ export default function App() {
                 className="carousel-track"
                 style={{ animationDuration: `${Math.max(12, previousGallery.length * 3)}s` }}
               >
-                {[...previousGallery, ...previousGallery].map((src, idx) => (
-                  <div key={idx} className="carousel-item">
-                    <img src={src} alt={`previous-${idx % previousGallery.length}`} />
-                  </div>
-                ))}
+                {(() => {
+                  // build items with their meta, then duplicate for seamless loop
+                  const items = previousGallery.map((src, i) => {
+                    const m = galleryMeta[i] || { h: 160, ty: 0, rotate: 0, z: 1, ml: -24 }; // smaller default (less overlap)
+                    return { src, meta: m, key: `${i}-${src}` };
+                  });
+                  const dup = [...items, ...items];
+                  return dup.map((it, idx) => {
+                    const isFirst = idx === 0;
+                    const style = {
+                      transform: `translateY(${it.meta.ty}px) rotate(${it.meta.rotate}deg)`,
+                      zIndex: it.meta.z,
+                      marginLeft: isFirst ? 0 : `${it.meta.ml}px`
+                    };
+                    const imgStyle = { height: `${it.meta.h}px`, width: 'auto' };
+                    return (
+                      <div key={`${idx}-${it.key}`} className="carousel-item" style={style}>
+                        <img src={it.src} alt={`previous-${idx % previousGallery.length}`} style={imgStyle} />
+                      </div>
+                    );
+                  });
+                })()}
               </div>
             </div>
           ) : (

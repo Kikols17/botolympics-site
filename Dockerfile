@@ -25,6 +25,9 @@ COPY --from=builder /app/server.js /app/server.js
 # copy default runtime config (overridden by docker-compose volume if mounted)
 COPY --from=builder /app/config /app/config
 
+# declare assets dir as a runtime volume so docker-compose can mount host assets for live edits
+VOLUME ["/app/dist/assets"]
+
 EXPOSE ${APP_PORT}
 
 # start the node static server

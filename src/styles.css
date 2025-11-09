@@ -579,38 +579,74 @@ a:focus {
 
 /* previous edition infinite carousel */
 .prev-carousel {
-  overflow: hidden;
+  /* prevent the very wide animated track from increasing page width */
+  overflow-x: hidden;   /* clip horizontally */
+  overflow-y: visible;  /* still allow vertical overlap */
   width: 100%;
-  padding: 8px 0 20px;
+  padding: 100px 0 32px;
+  min-height: 260px;
+  position: relative;
+  contain: layout;      /* help prevent layout from spilling out */
+  /* hide any scrollbars that might appear */
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+
+/* hide webkit scrollbars */
+.prev-carousel::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .carousel-track {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-end;
+  gap: 8px;
   width: max-content;
-  animation-name: carouselScroll;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+   animation-name: carouselScroll;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+   will-change: transform;
 }
 
+/* make each item use CSS vars for size & offset so we can vary them via nth-child */
 .carousel-item {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  overflow: hidden;
-  background: rgba(0,0,0,0.12);
+  border-radius: 12px;
+  overflow: visible; /* allow lifts */
+  background: rgba(0,0,0,0.04);
   padding: 6px;
+  position: relative;
+  /* smooth interaction */
+  transition: transform 360ms cubic-bezier(.18,.9,.32,1), box-shadow 260ms ease;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.45);
 }
 
+/* images become more prominent and sharper with bigger radius */
 .carousel-item img {
-  height: 160px;
+  height: auto; /* set via inline style from JS */
   width: auto;
   display: block;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 12px;
+  transition: transform 280ms ease, filter 260ms ease;
+  }
+
+/* hover / focus affordance — lift and slightly scale the image */
+.carousel-item:hover,
+.carousel-item:focus-within {
+  transform: translateY(-18px) scale(1.02);
+  box-shadow: 0 28px 64px rgba(0,0,0,0.7);
+  z-index: 99;
+}
+.carousel-item:hover img,
+.carousel-item:focus-within img {
+  transform: scale(1.06);
+  filter: saturate(1.06) contrast(1.03);
 }
 
 /* move the track left by 50% (since content duplicated) for seamless loop */
@@ -619,7 +655,17 @@ a:focus {
   100% { transform: translateX(-50%); }
 }
 
-/* responsive: smaller images on mobile */
+/* responsive: smaller images on mobile and reduced offsets */
+@media (max-width: 1000px) {
+  .prev-carousel { min-height: 300px; padding: 20px 0 32px; }
+}
+
 @media (max-width: 600px) {
-  .carousel-item img { height: 110px; }
+  .prev-carousel { min-height: 220px; padding: 16px 0 20px; }
+  .carousel-item img { transform-origin: center center; }
+}
+
+/* add a small separation so the title isn't visually crowded by the carousel */
+#previous > h2 {
+  margin-top: 8px;
 }

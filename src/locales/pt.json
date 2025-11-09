@@ -52,6 +52,7 @@
   },
   "faq": {
     "title": "Questões Frequentes",
+    "description": "Para que não tenhas dúvidas quanto à competição.",
     "items": [
       {
         "q": "Como é que me inscrevo?",

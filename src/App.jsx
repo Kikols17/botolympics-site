@@ -151,6 +151,7 @@ export default function App() {
 
         <section className="wrap section" id="faq">
           <h2>{faq.title}</h2>
+          <p>{faq.description}</p>
           <FaqList items={faq.items} />
         </section>
 

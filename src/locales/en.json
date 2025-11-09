@@ -52,6 +52,7 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
+    "description": "So you don’t have any doubts about the competition.",
     "items": [
       {
         "q": "How do I register?",

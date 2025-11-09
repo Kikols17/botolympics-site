@@ -1,43 +1,43 @@
 {
   "header": {
     "logo": "/assets/logo.png",
-    "registerText": "Register Now!"
+    "registerText": "Inscreve-te agora!"
   },
   "landing": {
     "background": "/assets/2025/hero.jpg",
     "foregroundLogo": "/assets/logo-foreground.png",
-    "date": "Event date coming soon!"
+    "date": "Data será anunciada em breve!"
   },
   "about": {
-    "title": "About us",
-    "text1": "BotOlympics is the University of Coimbra’s robotics competition, organized by Núcleo de Estudantes de Engenharia Eletrotécnica e de Computadores (NEEEC/AAC) and Clube de Robótica da Universidade de Coimbra (CR). It is an educational and formative event that aims to introduce the world of robotics to young aspiring engineers.",
-    "text2": "Consisting of three simultaneous tournaments for students from primary school to university level, the competition takes place in a hackathon environment over the course of four days, where participants have to develop ways of achieving the objectives of each of their respective challenges.",
-    "text3": "Given the wide age range of the participants, BotOlympics is considered one of a kind contest in Portugal."
+    "title": "Sobre nós",
+    "text1": "O BotOlympics é a competição de robótica da Universidade de Coimbra, organizada pelo Núcleo de Estudantes de Engenharia Eletrotécnica e de Computadores (NEEEC/AAC) e pelo Clube de Robótica da Universidade de Coimbra (CR). Trata-se de um evento educativo e formativo que tem como objetivo dar a conhecer o mundo da robótica a jovens aspirantes a engenheiros.",
+    "text2": "Composta por três torneios simultâneos para alunos do ensino básico ao universitário, a competição decorre num ambiente de hackathon ao longo de quatro dias, onde os participantes têm de desenvolver formas de atingir os objectivos de cada um dos respectivos desafios.",
+    "text3": "Dada a grande diversidade de idades dos participantes, o BotOlympics é considerado um evento único em Portugal."
   },
   "challenges": {
-    "title": "Challenges",
-    "text": "Discover more about the different tournaments and register!",
-    "registerOpenLabel": "Register",
-    "registerBeforeLabel": "Registrations open soon",
-    "registerAfterLabel": "Registrations full",
-    "regulationLabel": "Regulations",
+    "title": "Provas",
+    "text": "Descubre mais sobre os diferentes desafios e inscreve-te!",
+    "registerOpenLabel": "Inscrever",
+    "registerBeforeLabel": "Inscrições abrirão em breve",
+    "registerAfterLabel": "Inscrições esgotadas",
+    "regulationLabel": "Regulamentos",
     "items": [
       {
         "id": "isr",
         "name": "PROVA ISR",
         "logo": "/assets/2025/challenges/isr-logo.png",
-        "subtitle": "Elementary level",
-        "description": "Teams program a simple autonomous robot to follow lines and complete tasks.",
+        "subtitle": "Ensino básico",
+        "description": "Utilizando um kit de robótica simples e intuitivo – o MBot2 – programado numa linguagem de blocos, semelhante ao “Scratch”, os participantes devem percorrer uma pista utilizando vários sensores, evitando os obstáculos que possam surgir!",
         "formUrl": "https://forms.gle/isr-registration",
         "rulesUrl": "/assets/2025/rules/isr-rules.pdf",
         "bg": "/assets/2025/challenges/isr-bg.jpg"
       },
       {
         "id": "fctuc",
-        "name": "FCTUC CHALLENGE",
+        "name": "PROVA FCTUC",
         "logo": "/assets/2025/challenges/fctuc-logo.png",
-        "subtitle": "University level",
-        "description": "Advanced autonomous navigation and sensing challenge for university teams.",
+        "subtitle": "Ensino Superior",
+        "description": "Utilizando um robô desenvolvido especialmente por nós, programado em C++ para Arduino, os participantes devem perseguir um ladrão em fuga utilizando os sensores disponíveis para navegar através de um labirinto.",
         "formUrl": "https://forms.gle/fctuc-registration",
         "rulesUrl": "/assets/2025/rules/fctuc-rules.pdf",
         "bg": "/assets/2025/challenges/fctuc-bg.jpg"
@@ -45,83 +45,84 @@
     ]
   },
   "schedule": {
-    "title": "Schedule",
-    "description": "The schedule shows all talks, workshops and competition times. Download or view the schedule image below.",
+    "title": "Programa",
+    "description": "Este é o programa para o maior espetáculo do ano!",
+    "missing":"O programa será disponibilizado em breve!",
     "image": "/assets/2025/programa.png"
   },
   "faq": {
-    "title": "Frequently Asked Questions",
+    "title": "Questões Frequentes",
     "items": [
       {
-        "q": "How do I register?",
-        "a": "Registration is limited to the number of spots available and can be done here. Please note that when registering you will need to have all your team’s details collected, including a passport photo of each member, a declaration of permission from your guardian (if applicable) and proof of payment at the event."
+        "q": "Como é que me inscrevo?",
+        "a": "As inscrições são limitadas ao número de lugares disponíveis e podem ser efectuadas aqui. Tenha em atenção que, no momento da inscrição, terá de recolher todos os dados da sua equipa, incluindo uma fotografia tipo passe de cada membro, uma declaração de autorização do seu tutor (se aplicável) e um comprovativo de pagamento no evento."
       },
       {
-        "q": "Is it compulsory to take part in all moments of the challenge?",
-        "a": "Our aim is to provide a learning environment, team spirit and encourage students’ problem-solving skills. To this end, teams must take part in all stages of the event and must be accompanied by their tutor (if applicable) at all times."
+        "q": "É obrigatório participar em todos os momentos da competição?",
+        "a": "O nosso objetivo é proporcionar um ambiente de aprendizagem, espírito de equipa e incentivar as capacidades de resolução de problemas dos alunos. Para tal, as equipas devem participar em todas as fases do evento e devem ser acompanhadas pelo seu tutor (se aplicável) em todos os momentos."
       },
       {
-        "q": "How much does it cost to register?",
-        "a": "Participation in this event costs €17.50 per participant and covers all meals and material needed for the competition. Participants also receive a goodie bag, an event T-shirt, a cultural visit and access to all the activities on the event programme. Participation of tutors is free of charge."
+        "q": "Qual é o custo da inscrição?",
+        "a": "A participação neste evento custa 17,50 euros por participante e cobre todas as refeições e o material necessário para a competição. Os participantes recebem ainda um saco de brindes, uma t-shirt do evento, uma visita cultural e acesso a todas as actividades do programa do evento. A participação dos tutores é gratuita."
       },
       {
-        "q": "What meals are provided by the organisation?",
-        "a": "All meals are provided by the organisation (breakfast, lunch and dinner). There will also be regular coffee breaks throughout the day. Coffee is also provided by the organisation throughout the event, except at the final venue."
+        "q": "Que refeições são fornecidas pela organização?",
+        "a": "Todas as refeições são fornecidas pela organização (pequeno-almoço, almoço e jantar). Haverá também intervalos regulares para café ao longo do dia. O café é igualmente fornecido pela organização durante todo o evento, exceto no local de encerramento."
       },
       {
-        "q": "I would like a receipt, how do I proceed?",
-        "a": "The registration receipt will be issued to all members, so you will be asked for your tax number (NIF) when you register and it will be sent to your e-mail address as soon as it has been issued. The receipt is issued by the financial services of the Academic Association of Coimbra and not by the BotOlympics Organising Committee, so this process may take some time."
+        "q": "Gostaria de receber um recibo, como devo proceder?",
+        "a": "O recibo de inscrição será emitido para todos os sócios, pelo que lhe será pedido o seu número de contribuinte (NIF) no ato da inscrição e este será enviado para o seu e-mail assim que for emitido. O recibo é emitido pelos serviços financeiros da Associação Académica de Coimbra e não pela Comissão Organizadora do BotOlympics, pelo que este processo poderá demorar algum tempo."
       },
       {
-        "q": "What kind of certificate are we entitled to?",
-        "a": "All event participants, mentors and volunteers will receive a certificate of participation in the event, issued by the BotOlympics Organising Committee and certified by the Director of the Department of Electrical and Computer Engineering at FCTUC. UC students will also receive a diploma supplement issued by the Academic Management Services of the University of Coimbra, as well as justification for absences should you have to miss any classes."
+        "q": "A que tipo de certificado temos direito?",
+        "a": "Todos os participantes, mentores e voluntários do evento receberão um certificado de participação no evento, emitido pela Comissão Organizadora do BotOlympics e certificado pelo Diretor do Departamento de Engenharia Eletrotécnica e de Computadores da FCTUC. Os estudantes da UC receberão ainda um suplemento ao diploma emitido pelos Serviços de Gestão Académica da Universidade de Coimbra, bem como uma justificação de faltas caso tenham de faltar a alguma aula."
       },
       {
-        "q": "I don’t have a team, now what?",
-        "a": "All teams must have 4 members. Only in the case of higher education competitions (FCTUC) is it possible to register individually. In this case, registration will be confirmed when 3 more participants are in the same position and can thus form a team."
+        "q": "Não tenho equipa, e agora?",
+        "a": "Todas as equipas devem ser constituídas por 4 elementos. Apenas no caso da competição do ensino superior (FCTUC) é possível efetuar uma inscrição individual. Neste caso, a inscrição será confirmada quando mais 3 participantes estiverem na mesma posição e puderem assim formar uma equipa."
       },
       {
-        "q": "How does the competition work according to the schedule?",
-        "a": "The schedules will be strict for essential meals (breakfast, lunch and dinner), the first day’s training sessions and the final competition. Aside from this, participants are free to work (or sleep) whenever they please."
+        "q": "Como funciona a competição de acordo com o horário?",
+        "a": "Os horários serão rigorosos para as refeições essenciais (pequeno-almoço, almoço e jantar), as sessões de treino do primeiro dia e a competição final. Para além disso, os participantes são livres de trabalhar (ou dormir) quando lhes apetecer."
       },
       {
-        "q": "Is there transport during the event?",
-        "a": "Transport during the event is provided by the organisation, both for the cultural visit and for the Grand Finale’s venue."
+        "q": "Existe transporte durante o evento?",
+        "a": "O transporte durante o evento é assegurado pela organização, tanto para a visita cultural como para o local da grande final."
       },
       {
-        "q": "Where are we staying?",
-        "a": "Both the participants and the accompanying tutors will stay at the Department of Electrical and Computer Engineering (DEEC). Teams may choose to stay elsewhere, but all the logistics and costs will be assumed by them or the school (if applicable)."
+        "q": "Onde é que vamos ficar?",
+        "a": "Tanto os participantes como os tutores acompanhantes ficarão alojados no Departamento de Engenharia Eletrotécnica e de Computadores (DEEC). As equipas podem optar por ficar noutro local, mas toda a logística e custos serão assumidos por elas ou pela escola (se aplicável)."
       },
       {
-        "q": "I want to volunteer, what benefits do I get and how can I sign up?",
-        "a": "Volunteers are entitled to the same benefits as participants (food, changing rooms, transport, overnight accommodation and a certificate). Registration is also available on the BotOlympics website during the period publicised on social media."
+        "q": "Quero ser voluntário, que benefícios tenho e como posso inscrever-me?",
+        "a": "Os voluntários têm direito às mesmas regalias que os participantes (alimentação, balneários, transporte, alojamento noturno e certificado). As inscrições também estão disponíveis no sítio Web dos BotOlympics durante o período divulgado nas redes sociais."
       },
       {
-        "q": "In the case of primary and high school tournaments, is it possible to register more than one team per school?",
-        "a": "Yes, there can be more than one team per school. However, each event supports a limited number of teams. Teams are approved once the registration fee has been paid and if there is more than one team, we prioritize the registration of the first team from each school, while the others will be placed on a waiting list."
+        "q": "No caso dos torneios do ensino básico e secundário, é possível inscrever mais do que uma equipa por escola?",
+        "a": "Sim, pode haver mais do que uma equipa por escola. No entanto, cada evento suporta um número limitado de equipas. As equipas são aprovadas após o pagamento da taxa de inscrição e, se houver mais do que uma equipa, damos prioridade à inscrição da primeira equipa de cada escola, ficando as restantes em lista de espera."
       },
       {
-        "q": "I would like to buy a robot after the event, what should I do?",
-        "a": "If you want to buy one of the robot models for the ISR or Bot’N Roll competitions, you can do so for less than the usual retail price. The purchase is made to order so you should show interest at the time of registration."
+        "q": "Gostaria de comprar um robot depois do evento, o que devo fazer?",
+        "a": "Se quiser comprar um dos modelos de robô para as competições ISR ou Bot’N Roll, pode fazê-lo por menos do que o preço de venda habitual. A compra é feita por encomenda, pelo que deve manifestar o seu interesse no momento da inscrição."
       },
       {
-        "q": "What material should I bring to the competition?",
-        "a": "You should bring personal hygiene equipment (slippers, towels, etc.), a sleeping bag, a mattress or equivalent, clothes for the duration of the event, among other items that you consider necessary for the purpose. For the actual tournament, you should bring your own computer (at least one per team)."
+        "q": "Que material devo levar para a competição?",
+        "a": "Deverá trazer material de higiene pessoal (chinelos, toalhas, etc.), saco-cama, colchão ou equivalente, roupa para a duração do evento, entre outros artigos que considere necessários para o efeito. Para o torneio propriamente dito, deverá trazer o seu próprio computador (pelo menos um por equipa)."
       },
       {
-        "q": "I have overlapping classes with the event, now what?",
-        "a": "Attendance at the event, in particular the opening session and workshops, is compulsory. If you have classes at the same time, you will be entitled to a certificate of attendance to excuse any absences."
+        "q": "Tenho aulas que se sobrepõem ao evento, e agora?",
+        "a": "A presença no evento, nomeadamente na sessão de abertura e nos workshops, é obrigatória. Se tiver aulas em simultâneo, terá direito a um certificado de presença para justificar eventuais faltas."
       }
     ]
   },
   "previousEdition": {
-    "title": "Previous Edition",
+    "title": "A Edição Anterior",
     "images": [
     ]
   },
   "sponsors": {
-    "title": "Sponsors",
-    "description": "BotOlympics needs your support! Contact us at patrocinios@botolympics.pt to learn more about sponsorship opportunities and benefits.",
+    "title": "Patrocínios",
+    "description": "O BotOlympics precisa do seu apoio! Contacte-nos através de patrocinios@botolympics.pt para saber mais sobre as oportunidades e benefícios de patrocínio.",
     "tiers": [
       {
         "name": "Institutional",
@@ -148,19 +149,19 @@
         ]
       }
     ],
-    "contactNote": "Interested in sponsoring our event? Contact us via patrocinios@botolympics.pt."
+    "contactNote": "Tem interesse em patrocinar o nosso evento? Contacte-nos através de patrocinios@botolympics.pt."
   },
   "team": [
   ],
   "location": {
-    "title": "Location",
+    "title": "Localização",
     "description": "DEEC, Polo II, University of Coimbra",
     "mapEmbedUrl": "https://www.google.com/maps?q=DEEC+Polo+II+Coimbra&output=embed"
   },
   "footer": {
-    "socialsLabel": "Social Media",
-    "contactsLabel": "Contacts",
-    "organizationLabel": "Organization",
+    "socialsLabel": "Redes Sociais",
+    "contactsLabel": "Contactos",
+    "organizationLabel": "Organização",
     "socials": [
       { "name": "Facebook",  "url": "https://www.facebook.com/botolympics",  "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384053.png" },
       { "name": "Instagram", "url": "https://www.instagram.com/botolympics", "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384063.png" },
@@ -169,8 +170,8 @@
       { "name": "YouTube",   "url": "https://www.youtube.com/@botolympics",    "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384060.png" }
     ],
     "contacts": [
-      { "label": "General",  "email": "geral@botolympics.pt" },
-      { "label": "Sponsors", "email": "patrocinios@botolympics.pt" }
+      { "label": "Geral",  "email": "geral@botolympics.pt" },
+      { "label": "Patrocínios", "email": "patrocinios@botolympics.pt" }
     ],
     "organizations": [
       {

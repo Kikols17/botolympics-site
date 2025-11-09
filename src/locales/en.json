@@ -24,10 +24,10 @@
     "items": [
       {
         "id": "isr",
-        "name": "PROVA ISR",
+        "name": "ISR CHALLENGE",
         "logo": "/assets/2025/challenges/isr-logo.png",
         "subtitle": "Elementary level",
-        "description": "Teams program a simple autonomous robot to follow lines and complete tasks.",
+        "description": "Using a simple and intuitive robotics kit – the MBot2 – programmed in a block language, similar to “Scratch”, participants must navigate a track using various sensors, avoiding any obstacles that may appear!",
         "formUrl": "https://forms.gle/isr-registration",
         "rulesUrl": "/assets/2025/rules/isr-rules.pdf",
         "bg": "/assets/2025/challenges/isr-bg.jpg"
@@ -36,8 +36,8 @@
         "id": "fctuc",
         "name": "FCTUC CHALLENGE",
         "logo": "/assets/2025/challenges/fctuc-logo.png",
-        "subtitle": "University level",
-        "description": "Advanced autonomous navigation and sensing challenge for university teams.",
+        "subtitle": "Higher education",
+        "description": "Using a robot developed by specially by us, programmed in C++ for Arduino, participants must chase after another robot, a thief on the run, using the available sensors to navigate through a labyrinth.",
         "formUrl": "https://forms.gle/fctuc-registration",
         "rulesUrl": "/assets/2025/rules/fctuc-rules.pdf",
         "bg": "/assets/2025/challenges/fctuc-bg.jpg"
@@ -46,7 +46,8 @@
   },
   "schedule": {
     "title": "Schedule",
-    "description": "The schedule shows all talks, workshops and competition times. Download or view the schedule image below.",
+    "description": "This is the schedule for the greatest spectacle of the year!",
+    "missing":"Schedule will be available soon!",
     "image": "/assets/2025/programa.png"
   },
   "faq": {

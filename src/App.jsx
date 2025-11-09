@@ -146,7 +146,7 @@ export default function App() {
         <section className="wrap section" id="schedule">
           <h2>{schedule.title}</h2>
           <p>{schedule.description}</p>
-          <div className="schedule-image"><img src={schedule.image} alt="Schedule will be available soon!" /></div>
+          <div className="schedule-image"><img src={schedule.image} alt={schedule.missing} /></div>
         </section>
 
         <section className="wrap section" id="faq">

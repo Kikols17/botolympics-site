@@ -50,6 +50,90 @@ export default function App() {
     }
   }, [i18n]);
 
+  // new: smooth controlled pan when navigating to hashes (click / load / hashchange)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const headerSelector = '.bo-header';
+    const DEFAULT_DURATION = 900; // ms
+
+    const easeInOutCubic = (t) => t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    const getHeaderOffset = () => {
+      const h = document.querySelector(headerSelector);
+      return h ? h.offsetHeight : 0;
+    };
+
+    const scrollToElement = (el, duration = DEFAULT_DURATION) => {
+      if (!el) return;
+      const startY = window.scrollY || window.pageYOffset;
+      const rect = el.getBoundingClientRect();
+      const targetY = rect.top + startY - getHeaderOffset() - 12; // small breathing room
+      const distance = targetY - startY;
+      let startTime = null;
+
+      const step = (ts) => {
+        if (!startTime) startTime = ts;
+        const elapsed = ts - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeInOutCubic(progress);
+        window.scrollTo(0, Math.round(startY + distance * eased));
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      };
+      requestAnimationFrame(step);
+    };
+
+    const scrollToHash = (hash, duration = DEFAULT_DURATION) => {
+      if (!hash) return;
+      const id = hash.replace(/^#/, '');
+      const el = document.getElementById(id);
+      if (!el) return;
+      scrollToElement(el, duration);
+    };
+
+    // intercept clicks on same-page hash anchors
+    const onDocumentClick = (ev) => {
+      const a = ev.target.closest && ev.target.closest('a');
+      if (!a) return;
+      const href = a.getAttribute('href') || '';
+      if (!href.startsWith('#')) return;
+      // allow links with data-skip-smooth to bypass the smooth scroll if needed
+      if (a.hasAttribute('data-skip-smooth')) return;
+      // prevent default jump and perform smooth scroll
+      ev.preventDefault();
+      const hash = href;
+      // update URL without causing default jump (pushState keeps history)
+      if (history && history.pushState) {
+        history.pushState(null, '', hash);
+      } else {
+        location.hash = hash;
+      }
+      scrollToHash(hash);
+    };
+
+    // respond to hashchange (keyboard navigation / back-forward)
+    const onHashChange = () => scrollToHash(location.hash);
+
+    // if page loads with a hash, animate to it after a short delay (allow layout)
+    const initialHash = location.hash;
+    if (initialHash) {
+      // small timeout to allow layout/paint
+      setTimeout(() => scrollToHash(initialHash, DEFAULT_DURATION), 80);
+    }
+
+    document.addEventListener('click', onDocumentClick, true);
+    window.addEventListener('hashchange', onHashChange, false);
+
+    return () => {
+      document.removeEventListener('click', onDocumentClick, true);
+      window.removeEventListener('hashchange', onHashChange, false);
+    };
+  }, []);
+
   return (
     <div className="bo-site">
       <header className="bo-header">

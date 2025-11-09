@@ -5,7 +5,9 @@ const path = require('path');
 const PORT = process.env.APP_PORT ? Number(process.env.APP_PORT) : 3000;
 const HOST = '0.0.0.0';
 const ROOT = path.join(__dirname, 'dist');
-const LOCALES = path.join(__dirname, 'locales'); // <-- new: runtime locales dir
+const LOCALES = path.join(__dirname, 'locales');
+const CONFIG_DIR = path.join(__dirname, 'config');
+const CONFIG_FILE = path.join(CONFIG_DIR, 'registrations.json');
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -47,6 +49,14 @@ function serveIndex(res) {
   });
 }
 
+// make sure config dir exists with default file (the Dockerfile will copy defaults)
+if (!fs.existsSync(CONFIG_DIR)) {
+  try { fs.mkdirSync(CONFIG_DIR, { recursive: true }); } catch (e) {}
+}
+if (!fs.existsSync(CONFIG_FILE)) {
+  try { fs.writeFileSync(CONFIG_FILE, JSON.stringify({}, null, 2)); } catch (e) {}
+}
+
 const server = http.createServer((req, res) => {
   try {
     const decoded = decodeURI(req.url.split('?')[0]);
@@ -61,15 +71,42 @@ const server = http.createServer((req, res) => {
     if (safe.startsWith('locales/')) {
       const rel = safe.replace(/^locales\//, '');
       const filePath = path.join(LOCALES, rel);
-      // ensure path remains under LOCALES
-      if (!filePath.startsWith(LOCALES)) {
-        res.writeHead(400);
-        return res.end('Bad Request');
-      }
+      if (!filePath.startsWith(LOCALES)) { res.writeHead(400); return res.end('Bad Request'); }
       fs.stat(filePath, (err, stats) => {
         if (!err && stats.isFile()) return sendFile(res, filePath);
-        res.writeHead(404);
-        return res.end('Not found');
+        res.writeHead(404); return res.end('Not found');
+      });
+      return;
+    }
+
+    // Serve config file (readable by the client)
+    if (safe === '_config/registrations.json') {
+      fs.stat(CONFIG_FILE, (err, stats) => {
+        if (!err && stats.isFile()) return sendFile(res, CONFIG_FILE);
+        res.writeHead(404); return res.end('Not found');
+      });
+      return;
+    }
+
+    // Admin endpoint to update registrations (POST JSON)
+    if (safe === '_admin/registrations' && req.method === 'POST') {
+      let body = '';
+      req.on('data', chunk => { body += chunk.toString(); });
+      req.on('end', () => {
+        try {
+          const payload = JSON.parse(body);
+          // payload should be an object mapping ids to "open"|"before"|"after"
+          if (typeof payload !== 'object' || Array.isArray(payload) || payload === null) {
+            res.writeHead(400); return res.end('Bad payload');
+          }
+          fs.writeFile(CONFIG_FILE, JSON.stringify(payload, null, 2), (err) => {
+            if (err) { res.writeHead(500); return res.end('Failed to write config'); }
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            return res.end(JSON.stringify({ ok: true }));
+          });
+        } catch (e) {
+          res.writeHead(400); return res.end('Invalid JSON');
+        }
       });
       return;
     }
@@ -77,7 +114,6 @@ const server = http.createServer((req, res) => {
     let filePath = path.join(ROOT, safe);
     fs.stat(filePath, (err, stats) => {
       if (!err && stats.isDirectory()) {
-        // directory -> serve index.html inside it (if any) or fallback to root index
         const idx = path.join(filePath, 'index.html');
         fs.access(idx, fs.constants.R_OK, (ie) => {
           if (!ie) return sendFile(res, idx);
@@ -88,8 +124,6 @@ const server = http.createServer((req, res) => {
       if (!err && stats.isFile()) {
         return sendFile(res, filePath);
       }
-      // not found -> for SPA routes, serve index.html; otherwise 404
-      // simple heuristic: treat requests that look like assets (have an extension) as 404
       if (path.extname(filePath)) {
         res.writeHead(404);
         return res.end('Not found');
@@ -103,6 +137,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, HOST, () => {
-  // no console noise required, but helpful for local debugging
-  console.log(`Static server running at http://${HOST}:${PORT} serving ${ROOT} and locales ${LOCALES}`);
+  console.log(`Static server running at http://${HOST}:${PORT} serving ${ROOT}, locales ${LOCALES}, config ${CONFIG_FILE}`);
 });

@@ -23,24 +23,24 @@
     "regulationLabel": "Regulations",
     "items": [
       {
+        "id": "isr",
         "name": "PROVA ISR",
         "logo": "/assets/2025/challenges/isr-logo.png",
         "subtitle": "Elementary level",
         "description": "Teams program a simple autonomous robot to follow lines and complete tasks.",
         "formUrl": "https://forms.gle/isr-registration",
         "rulesUrl": "/assets/2025/rules/isr-rules.pdf",
-        "bg": "/assets/2025/challenges/isr-bg.jpg",
-        "state": ""
+        "bg": "/assets/2025/challenges/isr-bg.jpg"
       },
       {
+        "id": "fctuc",
         "name": "FCTUC CHALLENGE",
         "logo": "/assets/2025/challenges/fctuc-logo.png",
         "subtitle": "University level",
         "description": "Advanced autonomous navigation and sensing challenge for university teams.",
         "formUrl": "https://forms.gle/fctuc-registration",
         "rulesUrl": "/assets/2025/rules/fctuc-rules.pdf",
-        "bg": "/assets/2025/challenges/fctuc-bg.jpg",
-        "state": ""
+        "bg": "/assets/2025/challenges/fctuc-bg.jpg"
       }
     ]
   },

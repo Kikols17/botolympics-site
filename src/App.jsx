@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import FaqList from './components/FaqList';
 
@@ -20,6 +20,23 @@ export default function App() {
 
   const [openFaq, setOpenFaq] = useState(null);
   const toggleFaq = (i) => setOpenFaq(openFaq === i ? null : i);
+
+  // new: registrations config fetched at runtime (fixed endpoint + periodic refresh)
+  const [registrations, setRegistrations] = useState({});
+  useEffect(() => {
+    let mounted = true;
+    const fetchCfg = () => {
+      fetch('/_config/registrations.json').then(r => {
+        if (!r.ok) return;
+        return r.json();
+      }).then(data => {
+        if (mounted && data && typeof data === 'object') setRegistrations(data);
+      }).catch(() => {});
+    };
+    fetchCfg();
+    const intervalId = setInterval(fetchCfg, 5000); // poll every 5s so edits apply while running
+    return () => { mounted = false; clearInterval(intervalId); };
+  }, []);
 
   return (
     <div className="bo-site">
@@ -75,7 +92,8 @@ export default function App() {
           <p>{challenges.text}</p>
           <div className="challenges-grid">
             {challenges.items.map((c, i) => {
-              const state = (c.state || '').toLowerCase();
+              // determine state from runtime config first, then from any fallback in the item
+              const state = (registrations && registrations[c.id]) ? String(registrations[c.id]).toLowerCase() : '';
               const isBefore = state.includes('before');
               const isAfter = state.includes('after');
               const isClosed = isBefore || isAfter;

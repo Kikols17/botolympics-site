@@ -22,6 +22,9 @@ COPY --from=builder /app/dist /app/dist
 # copy the small server file
 COPY --from=builder /app/server.js /app/server.js
 
+# copy default runtime config (overridden by docker-compose volume if mounted)
+COPY --from=builder /app/config /app/config
+
 EXPOSE ${APP_PORT}
 
 # start the node static server

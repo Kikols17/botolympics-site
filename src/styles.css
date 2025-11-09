@@ -35,7 +35,7 @@ html, body {
     width: 100%;
     top: 0;
     left: 0;
-    background: var(--bg);
+    background: var(--card);
     z-index: 50;
 }
 
@@ -125,7 +125,7 @@ html, body {
 }
 
 .landing-logo {
-    height: 120px;
+    height: 256px;
 }
 
 .landing-date {
@@ -165,17 +165,14 @@ html, body {
     gap: 12px;
 }
 
-.challenge-logo {
-    height: 48px;
-}
-
 .challenge-overlay {
     position: relative;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.6));
+    background: transparent;
     padding: 16px;
     display: flex;
-    justify-content: center; /* center the box horizontally */
+    justify-content: center;
     align-items: flex-start;
+    z-index: 1;
 }
 
 .challenge-box {
@@ -195,7 +192,7 @@ html, body {
 /* header row inside the box */
 .challenge-header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
 .challenge-name { font-size:22px; font-weight:800; margin:0; letter-spacing:0.6px; }
-.challenge-logo { height:44px; width:auto; margin-left:12px; }
+.challenge-logo { height:64px; width:auto; margin-left:12px; }
 
 /* thin divider */
 .divider { height:2px; background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.12)); margin:14px 0; border-radius:2px; opacity:0.9; }
@@ -204,13 +201,12 @@ html, body {
 .challenge-level { font-size:14px; color: var(--muted); font-weight:700; margin-bottom:8px; }
 .challenge-desc { color: rgba(255,255,255,0.92); line-height:1.45; margin:0 0 12px; }
 
-/* pill buttons row */
+/* pill buttons column */
 .challenge-actions {
     display: flex;
     flex-direction: column; /* stack buttons vertically so each can take full width */
     gap: 12px;
     margin-top: 6px;
-    /* removed justify-content and flex-wrap so buttons occupy available width */
 }
 .btn-pill {
     display: flex;

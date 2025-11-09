@@ -4,8 +4,8 @@
     "registerText": "Register Now!"
   },
   "landing": {
-    "background": "/assets/2025/hero.jpg",
-    "foregroundLogo": "/assets/logo-foreground.png",
+    "background": "/assets/2025/landing.jpg",
+    "foregroundLogo": "/assets/logo.png",
     "date": "Event date coming soon!"
   },
   "about": {
@@ -25,22 +25,22 @@
       {
         "id": "isr",
         "name": "ISR CHALLENGE",
-        "logo": "/assets/2025/challenges/isr-logo.png",
+        "logo": "/assets/2026/challenges/ISR/logo.png",
         "subtitle": "Primary education",
         "description": "Using a simple and intuitive robotics kit – the MBot2 – programmed in a block language, similar to “Scratch”, participants must navigate a track using various sensors, avoiding any obstacles that may appear!",
         "formUrl": "https://forms.gle/isr-registration",
-        "rulesUrl": "/assets/2025/rules/isr-rules.pdf",
-        "bg": "/assets/2025/challenges/isr-bg.jpg"
+        "rulesUrl": "/assets/2026/challenges/ISR/isr-rules.pdf",
+        "bg": "/assets/2026/challenges/ISR/bg.jpg"
       },
       {
         "id": "fctuc",
         "name": "FCTUC CHALLENGE",
-        "logo": "/assets/2025/challenges/fctuc-logo.png",
+        "logo": "/assets/2026/challenges/FCTUC/logo.png",
         "subtitle": "Higher education",
         "description": "Using a robot developed by specially by us, programmed in C++ for Arduino, participants must chase after another robot, a thief on the run, using the available sensors to navigate through a labyrinth.",
         "formUrl": "https://forms.gle/fctuc-registration",
-        "rulesUrl": "/assets/2025/rules/fctuc-rules.pdf",
-        "bg": "/assets/2025/challenges/fctuc-bg.jpg"
+        "rulesUrl": "/assets/2026/challenges/FCTUC/fctuc-rules.pdf",
+        "bg": "/assets/2026/challenges/FCTUC/bg.jpg"
       }
     ]
   },
@@ -48,7 +48,7 @@
     "title": "Schedule",
     "description": "This is the schedule for the greatest spectacle of the year!",
     "missing":"Schedule will be available soon!",
-    "image": "/assets/2025/programa.png"
+    "image": "/assets/2026/schedule.png"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -178,12 +178,12 @@
       {
         "name": "Clube de Robótica",
         "url": "https://clrobotica.deec.uc.pt",
-        "logo": "/assets/2025/sponsors/institutional-1.png"
+        "logo": "/assets/organization/CLROBOTICA.png"
       },
       {
         "name": "NEEEC",
         "url": "https://neeec.pt",
-        "logo": "/assets/2025/sponsors/institutional-2.png"
+        "logo": "/assets/organization/NEEEC.png"
       }
     ]
   }

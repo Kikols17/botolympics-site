@@ -50,6 +50,27 @@ export default function App() {
     }
   }, [i18n]);
 
+  // set the favicon to /assets/logo.svg (create or update link[rel~="icon"])
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    try {
+      const href = '/assets/logo.svg';
+      let icon = document.querySelector('link[rel~="icon"]');
+      if (icon) {
+        icon.setAttribute('href', href);
+        icon.setAttribute('type', 'image/svg+xml');
+      } else {
+        icon = document.createElement('link');
+        icon.setAttribute('rel', 'icon');
+        icon.setAttribute('href', href);
+        icon.setAttribute('type', 'image/svg+xml');
+        document.head.appendChild(icon);
+      }
+    } catch (e) {
+      // ignore any DOM errors
+    }
+  }, []);
+
   // new: smooth controlled pan when navigating to hashes (click / load / hashchange)
   useEffect(() => {
     if (typeof window === 'undefined') return;

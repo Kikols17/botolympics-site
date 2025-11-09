@@ -4,8 +4,8 @@
     "registerText": "Inscreve-te agora!"
   },
   "landing": {
-    "background": "/assets/2025/hero.jpg",
-    "foregroundLogo": "/assets/logo-foreground.png",
+    "background": "/assets/2025/landing.jpg",
+    "foregroundLogo": "/assets/logo.png",
     "date": "Data será anunciada em breve!"
   },
   "about": {
@@ -16,7 +16,7 @@
   },
   "challenges": {
     "title": "Provas",
-    "text": "Descubre mais sobre os diferentes desafios e inscreve-te!",
+    "text": "Descobre mais sobre os diferentes desafios e inscreve-te!",
     "registerOpenLabel": "Inscrever",
     "registerBeforeLabel": "Inscrições abrirão em breve",
     "registerAfterLabel": "Inscrições esgotadas",
@@ -25,22 +25,22 @@
       {
         "id": "isr",
         "name": "PROVA ISR",
-        "logo": "/assets/2025/challenges/isr-logo.png",
+        "logo": "/assets/2026/challenges/ISR/logo.png",
         "subtitle": "Ensino básico",
         "description": "Utilizando um kit de robótica simples e intuitivo – o MBot2 – programado numa linguagem de blocos, semelhante ao “Scratch”, os participantes devem percorrer uma pista utilizando vários sensores, evitando os obstáculos que possam surgir!",
         "formUrl": "https://forms.gle/isr-registration",
-        "rulesUrl": "/assets/2025/rules/isr-rules.pdf",
-        "bg": "/assets/2025/challenges/isr-bg.jpg"
+        "rulesUrl": "/assets/2026/challenges/ISR/isr-rules.pdf",
+        "bg": "/assets/2026/challenges/ISR/bg.jpg"
       },
       {
         "id": "fctuc",
         "name": "PROVA FCTUC",
-        "logo": "/assets/2025/challenges/fctuc-logo.png",
+        "logo": "/assets/2026/challenges/FCTUC/logo.png",
         "subtitle": "Ensino Superior",
         "description": "Utilizando um robô desenvolvido especialmente por nós, programado em C++ para Arduino, os participantes devem perseguir um ladrão em fuga utilizando os sensores disponíveis para navegar através de um labirinto.",
         "formUrl": "https://forms.gle/fctuc-registration",
-        "rulesUrl": "/assets/2025/rules/fctuc-rules.pdf",
-        "bg": "/assets/2025/challenges/fctuc-bg.jpg"
+        "rulesUrl": "/assets/2026/challenges/FCTUC/fctuc-rules.pdf",
+        "bg": "/assets/2026/challenges/FCTUC/bg.jpg"
       }
     ]
   },
@@ -48,7 +48,7 @@
     "title": "Programa",
     "description": "Este é o programa para o maior espetáculo do ano!",
     "missing":"O programa será disponibilizado em breve!",
-    "image": "/assets/2025/programa.png"
+    "image": "/assets/2026/schedule.png"
   },
   "faq": {
     "title": "Questões Frequentes",
@@ -178,12 +178,12 @@
       {
         "name": "Clube de Robótica",
         "url": "https://clrobotica.deec.uc.pt",
-        "logo": "/assets/2025/sponsors/institutional-1.png"
+        "logo": "/assets/organization/CLROBOTICA.png"
       },
       {
         "name": "NEEEC",
         "url": "https://neeec.pt",
-        "logo": "/assets/2025/sponsors/institutional-2.png"
+        "logo": "/assets/organization/NEEEC.png"
       }
     ]
   }

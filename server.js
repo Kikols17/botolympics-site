@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const url = require('url');
 
 const PORT = process.env.APP_PORT ? Number(process.env.APP_PORT) : 3000;
 const HOST = '0.0.0.0';
@@ -59,12 +60,37 @@ if (!fs.existsSync(CONFIG_FILE)) {
 
 const server = http.createServer((req, res) => {
   try {
-    const decoded = decodeURI(req.url.split('?')[0]);
+    const parsedUrl = url.parse(req.url, true);
+    const decoded = decodeURI(parsedUrl.pathname.split('?')[0]);
     let safe = decoded.replace(/^\/+/, ''); // remove leading slashes
     // Prevent path traversal
     if (safe.includes('..')) {
       res.writeHead(400);
       return res.end('Bad Request');
+    }
+
+    // Gallery listing endpoint: GET /_gallery?dir=/assets/previous
+    if (safe === '_gallery' && req.method === 'GET') {
+      const dirParam = parsedUrl.query && parsedUrl.query.dir;
+      if (!dirParam) { res.writeHead(400); return res.end('Missing dir'); }
+      const rel = String(dirParam).replace(/^\/+/, '');
+      const abs = path.join(ROOT, rel);
+      // ensure the requested directory is inside the ROOT
+      if (!abs.startsWith(ROOT)) { res.writeHead(400); return res.end('Bad Request'); }
+      fs.stat(abs, (err, stats) => {
+        if (err || !stats.isDirectory()) { res.writeHead(404); return res.end('Not found'); }
+        fs.readdir(abs, (err2, files) => {
+          if (err2) { res.writeHead(500); return res.end('Failed to read dir'); }
+          const exts = new Set(['.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg', '.bmp']);
+          const urls = files
+            .filter(f => exts.has(path.extname(f).toLowerCase()))
+            .sort()
+            .map(f => '/' + path.posix.join(rel, f).replace(/\\/g, '/'));
+          res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+          return res.end(JSON.stringify(urls));
+        });
+      });
+      return;
     }
 
     // Serve locale JSON files from LOCALES dir if requested (live-editable)

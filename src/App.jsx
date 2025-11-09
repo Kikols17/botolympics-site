@@ -155,6 +155,42 @@ export default function App() {
     };
   }, []);
 
+  // dynamic previous edition gallery (array of image URLs)
+  const [previousGallery, setPreviousGallery] = useState(Array.isArray(previous.images) ? previous.images : []);
+
+  // fetch gallery (supports a directory path string in previous.images or previous.galleryPath)
+  useEffect(() => {
+    let mounted = true;
+    let intervalId = null;
+
+    const dir = (typeof previous.images === 'string' && previous.images.trim())
+      ? previous.images.trim()
+      : (previous.galleryPath && typeof previous.galleryPath === 'string' ? previous.galleryPath : null);
+
+    const fetchGallery = async () => {
+      if (!dir) return;
+      try {
+        const res = await fetch(`/_gallery?dir=${encodeURIComponent(dir)}`);
+        if (!res.ok) return;
+        const list = await res.json();
+        if (mounted && Array.isArray(list)) setPreviousGallery(list);
+      } catch (e) { /* ignore, keep previousGallery as-is */ }
+    };
+
+    // If explicit images array present in locale, use it and skip polling
+    if (Array.isArray(previous.images) && previous.images.length) {
+      setPreviousGallery(previous.images);
+    } else if (dir) {
+      // initial fetch + periodic polling to reflect add/remove
+      fetchGallery();
+      intervalId = setInterval(fetchGallery, 4000);
+    } else {
+      setPreviousGallery([]);
+    }
+
+    return () => { mounted = false; if (intervalId) clearInterval(intervalId); };
+  }, [previous]);
+
   return (
     <div className="bo-site">
       <header className="bo-header">
@@ -274,13 +310,29 @@ export default function App() {
 
         <section className="wrap section" id="previous">
           <h2>{previous.title}</h2>
-          <div className="gallery-grid">
-            {previous.images.map((src, i) => (
-              <a key={i} href={src} target="_blank" rel="noreferrer" className="gallery-item">
-                <img src={src} alt={`previous-${i}`} />
-              </a>
-            ))}
-          </div>
+
+          {previousGallery && previousGallery.length > 0 ? (
+            <div className="prev-carousel" aria-label="Previous edition gallery">
+              <div
+                className="carousel-track"
+                style={{ animationDuration: `${Math.max(12, previousGallery.length * 3)}s` }}
+              >
+                {[...previousGallery, ...previousGallery].map((src, idx) => (
+                  <div key={idx} className="carousel-item">
+                    <img src={src} alt={`previous-${idx % previousGallery.length}`} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="gallery-grid">
+              {previous.images && previous.images.map && previous.images.map((src, i) => (
+                <a key={i} href={src} target="_blank" rel="noreferrer" className="gallery-item">
+                  <img src={src} alt={`previous-${i}`} />
+                </a>
+              ))}
+            </div>
+          )}
         </section>
 
         <section className="wrap section" id="sponsors">

@@ -576,3 +576,50 @@ a:focus {
         padding: 16px;
     }
 }
+
+/* previous edition infinite carousel */
+.prev-carousel {
+  overflow: hidden;
+  width: 100%;
+  padding: 8px 0 20px;
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  animation-name: carouselScroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.12);
+  padding: 6px;
+}
+
+.carousel-item img {
+  height: 160px;
+  width: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* move the track left by 50% (since content duplicated) for seamless loop */
+@keyframes carouselScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* responsive: smaller images on mobile */
+@media (max-width: 600px) {
+  .carousel-item img { height: 110px; }
+}

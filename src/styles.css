@@ -571,7 +571,7 @@ a:focus {
   overflow-y: visible;  /* still allow vertical overlap */
   width: 100%;
   padding: 100px 0 32px;
-  min-height: 260px;
+  min-height: 450px;
   position: relative;
   contain: layout;      /* help prevent layout from spilling out */
   /* hide any scrollbars that might appear */
@@ -579,12 +579,6 @@ a:focus {
   scrollbar-width: none;    /* Firefox */
 }
 
-/* hide webkit scrollbars */
-.prev-carousel::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
-}
 
 .carousel-track {
   display: flex;

@@ -7,6 +7,9 @@
     "background": "/assets/2025/landing.jpg",
     "foregroundLogo": "/assets/logo.png"
   },
+  "date": {
+    "text": "More information coming soon!"
+  },
   "about": {
     "title": "About us",
     "text1": "BotOlympics is the University of Coimbra’s robotics competition, organized by Núcleo de Estudantes de Engenharia Eletrotécnica e de Computadores (NEEEC/AAC) and Clube de Robótica da Universidade de Coimbra (CR). It is an educational and formative event that aims to introduce the world of robotics to young aspiring engineers.",

@@ -8,6 +8,7 @@ export default function App() {
 
   const header = t('header', { returnObjects: true });
   const landing = t('landing', { returnObjects: true });
+  const date = t('date', { returnObjects: true });
   const about = t('about', { returnObjects: true });
   const challenges = t('challenges', { returnObjects: true });
   const schedule = t('schedule', { returnObjects: true });
@@ -272,6 +273,11 @@ export default function App() {
         <div className="wrap landing-inner">
           <img className="landing-logo" src={landing.foregroundLogo} alt="edition logo" />
         </div>
+      </section>
+
+      {/*--------------------------- DATE SECTION ---------------------------*/}
+      <section className="date-section">
+        <h2>{date.text}</h2>
       </section>
 
       <main>

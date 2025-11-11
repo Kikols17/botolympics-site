@@ -302,36 +302,34 @@ export default function App() {
 
               return (
                 <article key={i} className="challenge-card" style={{ backgroundImage: `url('${c.bg}')` }}>
-                  <div className="challenge-overlay">
-                    {/* boxed content */}
-                    <div className="challenge-box">
-                      <div className="challenge-header">
-                        <h3 className="challenge-name">{c.name}</h3>
-                        <img src={c.logo} alt={`${c.name} logo`} className="challenge-logo" />
-                      </div>
+                  {/* boxed content */}
+                  <div className="challenge-box">
+                    <div className="challenge-header">
+                      <h3 className="challenge-name">{c.name}</h3>
+                      <img src={c.logo} alt={`${c.name} logo`} className="challenge-logo" />
+                    </div>
 
-                      <div className="divider" />
+                    <div className="divider" />
 
-                      <div className="challenge-level">{c.subtitle}</div>
+                    <div className="challenge-level">{c.subtitle}</div>
 
-                      <p className="challenge-desc">{c.description}</p>
+                    <p className="challenge-desc">{c.description}</p>
 
-                      <div className="challenge-actions">
-                        <a
-                          className="btn-pill btn-pill-primary"
-                          href={isClosed ? undefined : c.formUrl}
-                          target={isClosed ? undefined : "_blank"}
-                          rel={isClosed ? undefined : "noreferrer"}
-                          aria-disabled={isClosed}
-                          onClick={(e) => { if (isClosed) e.preventDefault(); }}
-                        >
-                          {regLabel}
-                        </a>
+                    <div className="challenge-actions">
+                      <a
+                        className="btn-pill btn-pill-primary"
+                        href={isClosed ? undefined : c.formUrl}
+                        target={isClosed ? undefined : "_blank"}
+                        rel={isClosed ? undefined : "noreferrer"}
+                        aria-disabled={isClosed}
+                        onClick={(e) => { if (isClosed) e.preventDefault(); }}
+                      >
+                        {regLabel}
+                      </a>
 
-                        <a className="btn-pill btn-pill-outline" href={c.rulesUrl} target="_blank" rel="noreferrer">
-                          {challenges.regulationLabel}
-                        </a>
-                      </div>
+                      <a className="btn-pill btn-pill-outline" href={c.rulesUrl} target="_blank" rel="noreferrer">
+                        {challenges.regulationLabel}
+                      </a>
                     </div>
                   </div>
                 </article>

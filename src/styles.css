@@ -574,9 +574,6 @@ a:focus {
   min-height: 450px;
   position: relative;
   contain: layout;      /* help prevent layout from spilling out */
-  /* hide any scrollbars that might appear */
-  -ms-overflow-style: none; /* IE/Edge */
-  scrollbar-width: none;    /* Firefox */
 }
 
 
@@ -638,11 +635,11 @@ a:focus {
 
 /* responsive: smaller images on mobile and reduced offsets */
 @media (max-width: 1000px) {
-  .prev-carousel { min-height: 300px; padding: 20px 0 32px; }
+  .prev-carousel { min-height: 380px; padding: 100px 0 80px; }
 }
 
 @media (max-width: 600px) {
-  .prev-carousel { min-height: 220px; padding: 16px 0 20px; }
+  .prev-carousel { min-height: 360px; padding: 80px 0 120px; }
   .carousel-item img { transform-origin: center center; }
 }
 

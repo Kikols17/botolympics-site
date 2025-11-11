@@ -358,6 +358,7 @@ export default function App() {
 
         <section className="wrap section" id="previous">
           <h2>{previous.title}</h2>
+          <p>{previous.description}</p>
 
           {previousGallery && previousGallery.length > 0 ? (
             <div className="prev-carousel" aria-label="Previous edition gallery">
@@ -436,9 +437,9 @@ export default function App() {
         </section>
 
         <section className="wrap section" id="team">
-          <h2>Our team</h2>
+          <h2>{team.title}</h2>
           <div className="team-grid">
-            {team.map((m, i) => (
+            {team.members.map((m, i) => (
               <div key={i} className="team-member">
                 <div className="avatar" style={{ backgroundImage: `url('${m.img}')` }} />
                 <div className="member-name">{m.name}</div>

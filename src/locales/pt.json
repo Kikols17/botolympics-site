@@ -130,6 +130,7 @@
   },
   "previousEdition": {
     "title": "A Edição Anterior",
+    "description": "Em poucas palavras, BotOlympics’25…",
     "galleryPath": "/assets/2025/gallery"
   },
   "sponsors": {
@@ -159,7 +160,10 @@
     ],
     "contactNote": "Tem interesse em patrocinar o nosso evento? Contacte-nos através de patrocinios@botolympics.pt."
   },
-  "team": [],
+  "team": {
+    "title": "A Nossa Equipa",
+    "members": []
+  },
   "location": {
     "title": "Localização",
     "description": "DEEC, Polo II, Universidade de Coimbra",

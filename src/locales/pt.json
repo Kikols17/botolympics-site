@@ -5,8 +5,7 @@
   },
   "landing": {
     "background": "/assets/2025/landing.jpg",
-    "foregroundLogo": "/assets/logo.png",
-    "date": "Data será anunciada em breve!"
+    "foregroundLogo": "/assets/logo.png"
   },
   "about": {
     "title": "Sobre nós",

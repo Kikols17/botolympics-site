@@ -271,7 +271,6 @@ export default function App() {
       }}>
         <div className="wrap landing-inner">
           <img className="landing-logo" src={landing.foregroundLogo} alt="edition logo" />
-          <div className="landing-date">{landing.date}</div>
         </div>
       </section>
 

@@ -214,14 +214,14 @@ html, body {
 /* primary filled pill (cyan) */
 .btn-pill-primary {
     background: linear-gradient(90deg, var(--accent), var(--accent-2));
-    color:#041018;
+    color: var(--bg);
 }
 
 /* outline pill */
 .btn-pill-outline {
     background: rgba(255,255,255,0.06);
     border:1px solid rgba(255,255,255,0.08);
-    color:#fff;
+    color: var(--text);
 }
 
 /* disabled/closed look (if used) */

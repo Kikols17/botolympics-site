@@ -313,7 +313,7 @@ export default function App() {
 
                     <div className="challenge-level">{c.subtitle}</div>
 
-                    <p className="challenge-desc">{c.description}</p>
+                    <div className="challenge-desc">{c.description}</div>
 
                     <div className="challenge-actions">
                       <a

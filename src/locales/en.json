@@ -32,6 +32,16 @@
         "bg": "/assets/2026/challenges/ISR/bg.jpg"
       },
       {
+        "id": "botnroll",
+        "name": "BOT N' ROLL CHALLENGE",
+        "logo": "/assets/2026/challenges/BOTNROLL/logo.png",
+        "subtitle": "Secondary education",
+        "description": "Using a robot – the Bot’N Roll ONE A – programmed in C++ for Arduino, participants must collect and deliver packages inside a simulated environment, relying on various sensors to navigate.",
+        "formUrl": "https://forms.gle/botnroll-registration",
+        "rulesUrl": "/assets/2026/challenges/BOTNROLL/botnroll-rules.pdf",
+        "bg": "/assets/2026/challenges/BOTNROLL/bg.jpg"
+      },
+      {
         "id": "fctuc",
         "name": "FCTUC CHALLENGE",
         "logo": "/assets/2026/challenges/FCTUC/logo.png",

@@ -17,7 +17,7 @@
     "title": "Provas",
     "text": "Descobre mais sobre os diferentes desafios e inscreve-te!",
     "registerOpenLabel": "Inscrever",
-    "registerBeforeLabel": "Inscrições abrirão em breve",
+    "registerBeforeLabel": "Inscrições em breve!",
     "registerAfterLabel": "Inscrições esgotadas",
     "regulationLabel": "Regulamentos",
     "items": [
@@ -30,6 +30,16 @@
         "formUrl": "https://forms.gle/isr-registration",
         "rulesUrl": "/assets/2026/challenges/ISR/isr-rules.pdf",
         "bg": "/assets/2026/challenges/ISR/bg.jpg"
+      },
+      {
+        "id": "botnroll",
+        "name": "PROVA BOT N' ROLL",
+        "logo": "/assets/2026/challenges/BOTNROLL/logo.png",
+        "subtitle": "Ensino Secundário",
+        "description": "Utilizando um robô – o Bot’N Roll ONE A – programado em C++ para Arduino, os participantes têm de recolher e entregar encomendas num ambiente simulado, recorrendo a vários sensores para navegar.",
+        "formUrl": "https://forms.gle/botnroll-registration",
+        "rulesUrl": "/assets/2026/challenges/BOTNROLL/botnroll-rules.pdf",
+        "bg": "/assets/2026/challenges/BOTNROLL/bg.jpg"
       },
       {
         "id": "fctuc",

@@ -126,7 +126,7 @@ html, body {
 }
 
 .landing-logo {
-    height: 480px;
+    height: clamp(200px, 100vw, 480px);
     width: auto;
     display: block;
 }
@@ -159,7 +159,6 @@ html, body {
     background-position: center;
     display: block;
     width: 100%;
-    padding: 20px 0;
 }
 
 .challenge-top {
@@ -170,7 +169,8 @@ html, body {
 
 .challenge-overlay {
     position: relative;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.35);
+    height: 100%;
     padding: 16px;
     display: flex;
     justify-content: center;
@@ -182,12 +182,13 @@ html, body {
     display: inline-block;
     width: auto;
     max-width: 100%;
+    height: 95%;
     background: linear-gradient(180deg, rgba(10,20,40,0.22), rgba(8,12,20,0.46));
     border-radius: 12px;
     padding: 28px 30px;
     box-shadow: 0 10px 30px rgba(3,6,12,0.6);
     backdrop-filter: blur(6px);
-    color: #fff;
+    color: var(--text);
     text-align: left;
     margin: 8px 0;
 }

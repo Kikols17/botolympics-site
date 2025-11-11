@@ -162,7 +162,173 @@
   },
   "team": {
     "title": "Our Team",
-    "members": []
+    "members": [
+      {
+        "name": "Tiago Furtado",
+        "role": "General Coordinator (NEEEC/AAC)",
+        "img": "/assets/team/Tiago_Furtado.jpg"
+      },
+      {
+        "name": "Simão Botas",
+        "role": "General Coordinator (CRUC)",
+        "img": "/assets/team/Simao_Botas.jpg"
+      },
+      {
+        "name": "André Marques",
+        "role": "Deputy General Coordinator",
+        "img": "/assets/team/Andre_Marques.jpg"
+      },
+      {
+        "name": "André Lourenço",
+        "role": "Secretary",
+        "img": "/assets/team/Andre_Lourenco.jpg"
+      },
+      {
+        "name": "Beatriz Bento",
+        "role": "Supervisor (NEEEC/AAC)",
+        "img": "/assets/team/Beatriz_Bento.jpg"
+      },
+      {
+        "name": "Francisco Cunha",
+        "role": "Representative (NEEEC/AAC)",
+        "img": "/assets/team/Francisco_Cunha.jpg"
+      },
+      {
+        "name": "Samuel Tomé",
+        "role": "Representative (NEEEC/AAC)",
+        "img": "/assets/team/Samuel_Tome.jpg"
+      },
+      {
+        "name": "Inês Miguel",
+        "role": "Representative (NEEEC/AAC)",
+        "img": "/assets/team/Ines_Miguel.jpg"
+      },
+      {
+        "name": "Diogo Vasco",
+        "role": "Technical",
+        "img": "/assets/team/Diogo_Vasco.jpg"
+      },
+      {
+        "name": "David Oliveira",
+        "role": "Technical",
+        "img": "/assets/team/David_Oliveira.jpg"
+      },
+      {
+        "name": "Gabriel Pinto",
+        "role": "Technical",
+        "img": "/assets/team/Gabriel_Pinto.jpg"
+      },
+      {
+        "name": "Rodrigo Gonçalves",
+        "role": "Technical",
+        "img": "/assets/team/Rodrigo_Goncalves.jpg"
+      },
+      {
+        "name": "Simão Rodrigues",
+        "role": "Technical",
+        "img": "/assets/team/Simao_Rodrigues.jpg"
+      },
+      {
+        "name": "Bruno Silva",
+        "role": "Technical",
+        "img": "/assets/team/Bruno_Silva.jpg"
+      },
+      {
+        "name": "Martim Pegueiro",
+        "role": "Technical",
+        "img": "/assets/team/Martim_Pegueiro.jpg"
+      },
+      {
+        "name": "Miguel Birsanu",
+        "role": "Technical",
+        "img": "/assets/team/Miguel_Birsanu.jpg"
+      },
+      {
+        "name": "Henrique Malva",
+        "role": "Technical",
+        "img": "/assets/team/Henrique_Malva.jpg"
+      },
+      {
+        "name": "Francisco Silva",
+        "role": "IT",
+        "img": "/assets/team/Francisco_Silva.jpg"
+      },
+      {
+        "name": "João Marinheiro",
+        "role": "School Contacts",
+        "img": "/assets/team/Joao_Marinheiro.jpg"
+      },
+      {
+        "name": "Ricardo Sardinha",
+        "role": "School Contacts",
+        "img": "/assets/team/Ricardo_Sardinha.jpg"
+      },
+      {
+        "name": "João Gonçalves",
+        "role": "School Contacts",
+        "img": "/assets/team/Joao_Goncalves.jpg"
+      },
+      {
+        "name": "Miguel Gonçalves",
+        "role": "Logistics",
+        "img": "/assets/team/Miguel_Goncalves.jpg"
+      },
+      {
+        "name": "Gonçalo Gonçalves",
+        "role": "Logistics",
+        "img": "/assets/team/Goncalo_Goncalves.jpg"
+      },
+      {
+        "name": "Rodrigo Carvalho",
+        "role": "Treasury",
+        "img": "/assets/team/Rodrigo_Carvalho.jpg"
+      },
+      {
+        "name": "Rodrigo Ramos",
+        "role": "Treasury",
+        "img": "/assets/team/Rodrigo_Ramos.jpg"
+      },
+      {
+        "name": "Beatriz Lucas",
+        "role": "Sponsorships & Support",
+        "img": "/assets/team/Beatriz_Lucas.jpg"
+      },
+      {
+        "name": "Daniel Faia",
+        "role": "Sponsorships & Support",
+        "img": "/assets/team/Daniel_Faia.jpg"
+      },
+      {
+        "name": "Filipe Rodrigues",
+        "role": "Sponsorships & Support",
+        "img": "/assets/team/Filipe_Rodrigues.jpg"
+      },
+      {
+        "name": "Isabela Panelli",
+        "role": "Sponsorships & Support",
+        "img": "/assets/team/Isabela_Panelli.jpg"
+      },
+      {
+        "name": "Teodoro Marques",
+        "role": "Sponsorships & Support",
+        "img": "/assets/team/Teodoro_Marques.jpg"
+      },
+      {
+        "name": "Bernardo Grazina",
+        "role": "Sponsorships & Support",
+        "img": "/assets/team/Bernardo_Grazina.jpg"
+      },
+      {
+        "name": "Matilde Pereira",
+        "role": "Communication & Image",
+        "img": "/assets/team/Matilde_Pereira.jpg"
+      },
+      {
+        "name": "Carolina Reis",
+        "role": "Communication & Image",
+        "img": "/assets/team/Carolina_Reis.jpg"
+      }
+    ]
   },
   "location": {
     "title": "Location",

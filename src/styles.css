@@ -480,6 +480,18 @@ body {
   text-align: center;
 }
 
+.member-name {
+  font-weight: 700;
+  color: var(--text);
+  margin: 8px 0 4px;
+}
+
+.member-role {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
 .avatar {
   width: 140px;
   height: 140px;

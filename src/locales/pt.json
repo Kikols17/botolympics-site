@@ -56,7 +56,7 @@
   "schedule": {
     "title": "Programa",
     "description": "Este é o programa para o maior espetáculo do ano!",
-    "missing":"O programa será disponibilizado em breve!",
+    "missing": "O programa será disponibilizado em breve!",
     "image": "/assets/2026/schedule.png"
   },
   "faq": {
@@ -136,32 +136,27 @@
       {
         "name": "Institutional",
         "color": "#ff003d",
-        "sponsors": [
-        ]
+        "sponsors": []
       },
       {
         "name": "Diamond",
         "color": "#00cbff",
-        "sponsors": [
-        ]
+        "sponsors": []
       },
       {
         "name": "Gold",
         "color": "#edd200",
-        "sponsors": [
-        ]
+        "sponsors": []
       },
       {
         "name": "Silver",
         "color": "#ececec",
-        "sponsors": [
-        ]
+        "sponsors": []
       }
     ],
     "contactNote": "Tem interesse em patrocinar o nosso evento? Contacte-nos através de patrocinios@botolympics.pt."
   },
-  "team": [
-  ],
+  "team": [],
   "location": {
     "title": "Localização",
     "description": "DEEC, Polo II, Universidade de Coimbra",
@@ -172,15 +167,41 @@
     "contactsLabel": "Contactos",
     "organizationLabel": "Organização",
     "socials": [
-      { "name": "Facebook",  "url": "https://www.facebook.com/botolympics",  "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384053.png" },
-      { "name": "Instagram", "url": "https://www.instagram.com/botolympics", "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384063.png" },
-      { "name": "TikTok",    "url": "https://www.tiktok.com/@botolympics",    "icon": "https://cdn-icons-png.flaticon.com/512/3046/3046126.png" },
-      { "name": "LinkedIn",  "url": "https://www.linkedin.com/company/botolympics", "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384014.png" },
-      { "name": "YouTube",   "url": "https://www.youtube.com/@botolympics",    "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384060.png" }
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com/botolympics",
+        "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384053.png"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.instagram.com/botolympics",
+        "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+      },
+      {
+        "name": "TikTok",
+        "url": "https://www.tiktok.com/@botolympics",
+        "icon": "https://cdn-icons-png.flaticon.com/512/3046/3046126.png"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/company/botolympics",
+        "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384014.png"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/@botolympics",
+        "icon": "https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+      }
     ],
     "contacts": [
-      { "label": "Geral",  "email": "geral@botolympics.pt" },
-      { "label": "Patrocínios", "email": "patrocinios@botolympics.pt" }
+      {
+        "label": "Geral",
+        "email": "geral@botolympics.pt"
+      },
+      {
+        "label": "Patrocínios",
+        "email": "patrocinios@botolympics.pt"
+      }
     ],
     "organizations": [
       {

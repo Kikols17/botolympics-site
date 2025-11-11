@@ -31,7 +31,7 @@ export default function App() {
         return r.json();
       }).then(data => {
         if (mounted && data && typeof data === 'object') setRegistrations(data);
-      }).catch(() => {});
+      }).catch(() => { });
     };
     fetchCfg();
     const intervalId = setInterval(fetchCfg, 5000); // poll every 5s so edits apply while running
@@ -297,8 +297,8 @@ export default function App() {
               const regLabel = isBefore
                 ? challenges.registerBeforeLabel
                 : isAfter
-                ? challenges.registerAfterLabel
-                : challenges.registerOpenLabel;
+                  ? challenges.registerAfterLabel
+                  : challenges.registerOpenLabel;
 
               return (
                 <article key={i} className="challenge-card" style={{ backgroundImage: `url('${c.bg}')` }}>

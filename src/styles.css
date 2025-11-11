@@ -121,11 +121,14 @@ html, body {
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    justify-content: center; /* added */
+    justify-content: flex-end;
+    padding-top: 180px
 }
 
 .landing-logo {
-    height: 256px;
+    height: 480px;
+    width: auto;
+    display: block;
 }
 
 .landing-date {

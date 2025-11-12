@@ -205,26 +205,26 @@ Edit `src/locales/pt.json` and `src/locales/en.json`:
 ```
 BotOlympicsSite/
 ├── src/
-│   ├── App.jsx              # Main app component
-│   ├── main.jsx             # Entry point
-│   ├── styles.css           # All styles
-│   ├── i18n.js              # i18next setup
+│   ├── App.jsx               # Main app component
+│   ├── main.jsx              # Entry point
+│   ├── styles.css            # All styles
+│   ├── i18n.js               # i18next setup
 │   ├── locales/
-│   │   ├── pt.json          # Portuguese content
-│   │   └── en.json          # English content
+│   │   ├── pt.json           # Portuguese content
+│   │   └── en.json           # English content
 │   └── components/
-│       └── FaqList.jsx      # FAQ component
+│       └── FaqList.jsx       # FAQ component
 ├── public/
 │   └── index.html
 ├── config/
-│   └── registrations.json   # Runtime challenge states
-├── assets/                  # Static images (gallery, logos, team photos)
-├── server.js                # Node.js static server
-├── vite.config.js           # Vite config (dev server, gallery endpoint)
-├── Dockerfile               # Multi-stage build
-├── docker-compose.yml       # Production setup
+│   └── registrations.json    # Runtime challenge states
+├── assets/                   # Static images (gallery, logos, team photos)
+├── server.js                 # Node.js static server
+├── vite.config.js            # Vite config (dev server, gallery endpoint)
+├── Dockerfile                # Multi-stage build
+├── docker-compose.yml        # Production setup
 ├── package.json
-└── README.md
+└── README.md                 # you are here :3
 ```
 
 ---

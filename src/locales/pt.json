@@ -19,6 +19,8 @@
   "challenges": {
     "title": "Provas",
     "text": "Descobre mais sobre os diferentes desafios e inscreve-te!",
+    "generalRegulationLabel": "Regulamento Geral",
+    "generalRegulationUrl": "/assets/2026/general-regulations.pdf",
     "registerOpenLabel": "Inscrever",
     "registerBeforeLabel": "Inscrições em breve!",
     "registerAfterLabel": "Inscrições esgotadas",

@@ -293,6 +293,16 @@ export default function App() {
         <section className="wrap section" id="challenges">
           <h2>{challenges.title}</h2>
           <p>{challenges.text}</p>
+          <div>
+            <a
+              className="btn-pill btn-pill-primary btn-pill-primary-lg"
+              href={challenges.generalRegulationUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {challenges.generalRegulationLabel}
+            </a>
+          </div>
           <div className="challenges-grid">
             {challenges.items.map((c, i) => {
               // determine state from runtime config first, then from any fallback in the item

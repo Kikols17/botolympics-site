@@ -19,6 +19,8 @@
   "challenges": {
     "title": "Challenges",
     "text": "Discover more about the different tournaments and register!",
+    "generalRegulationLabel": "General Regulation",
+    "generalRegulationUrl": "/assets/2026/general-regulations.pdf",
     "registerOpenLabel": "Register",
     "registerBeforeLabel": "Registrations open soon",
     "registerAfterLabel": "Registrations full",

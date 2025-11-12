@@ -5,6 +5,7 @@
   --accent-2: #00bfff;
   --text: #ffffff;
   --card: #262626;
+  --max-width: 1200px;
 }
 
 * {
@@ -22,7 +23,6 @@ body {
 html,
 body {
   height: 100%;
-  width: 100%;
 }
 
 .wrap {
@@ -275,7 +275,7 @@ body {
 
 /* large primary pill (constrained width) */
 .btn-pill-primary-lg {
-  max-width: 550px;
+  max-width: 370px;
   margin: 0 auto;
   display: flex;
   width: 100%;

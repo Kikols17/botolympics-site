@@ -5,8 +5,6 @@
   --accent-2: #00bfff;
   --text: #ffffff;
   --card: #262626;
-  --max-width: 1200px;
-  --radius: 12px;
 }
 
 * {
@@ -24,6 +22,7 @@ body {
 html,
 body {
   height: 100%;
+  width: 100%;
 }
 
 .wrap {
@@ -35,7 +34,7 @@ body {
 /* HEADER */
 .bo-header {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   left: 0;
   background: var(--card);
